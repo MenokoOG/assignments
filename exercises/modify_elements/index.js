@@ -16,3 +16,8 @@ let changePara = document.getElementById("the-para")
 // console.log(changePara)
 
 changePara.textContent = changeH1.textContent
+
+// OR the instructor solution
+
+// var text = document.querySelector("#header").textContent
+// document.querySelector("#paragraph").textContent = text
