@@ -27,19 +27,7 @@ function mouseScroll(){
 
 squareEL.onwheel = mouseScroll
 
-var colorMap = {
-    'g' : 'green',
-    'r' : 'red',
-    'y' : 'yellow',
-    'o' : 'orange'
-};
 
-$(document).on('keyup', function(e){
-    var letter = String.fromCharCode(e.which).toLowerCase();
-    $('#square-el').css('background-color', function(i,currentColour){
-        return colorMap[letter] || currentColour;
-    });
-});
 
 
 
