@@ -1,3 +1,5 @@
+//v school exercise by menoko og, lawrence jefferson II, 1-5-24
+
 const newHeadEl = document.getElementById("header")
 const newNameEl = document.getElementById("name")
 let newLeft1El = document.getElementById("left1-el")
@@ -26,7 +28,7 @@ newLeft2El.textContent = "What to keeping coding JavaScript?"
 newRight2El.textContent = "Heck yeah. let's do this!!!"
 
 clearBtnEl.addEventListener('click', function() {
-    // Clear the contents of the div
+    
     messagesDiv.innerHTML = '';
 });
 
