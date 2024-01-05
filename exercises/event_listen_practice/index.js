@@ -27,7 +27,7 @@ function mouseScroll() {
 
 squareEL.onwheel = mouseScroll
 
-//Function to change the background color based on the pressed key
+//Function to change the background color based on the pressed key, used this method to handle edge case of purpose of function
 function changeColor(event) {
     switch (event.key) {
         case 'r':

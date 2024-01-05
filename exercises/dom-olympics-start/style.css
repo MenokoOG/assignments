@@ -1,0 +1,50 @@
+#header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+#name-wrapper {
+    padding: 10px 10px;
+    margin-bottom: 20px;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin: 10px 0px;
+    padding: 20px;
+}
+
+#main {
+    margin: 30px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.message {
+    padding: 5px;
+}
+
+.right {
+    align-self: flex-end;
+    background-color: lightblue;
+}
+
+.left {
+    align-self: flex-start;
+    background-color: burlywood;
+}
+
+/* Additional CSS for red/black theme */
+.theme-two .right {
+    background-color: red;
+}
+
+.theme-two .left {
+    background-color: black;
+    color: white; /* Adjust text color for better visibility */
+}
