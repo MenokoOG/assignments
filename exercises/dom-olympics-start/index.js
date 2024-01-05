@@ -33,8 +33,8 @@ clearBtnEl.addEventListener('click', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    var dropdown = document.getElementById('theme-drop-down');
-    var messagesContainer = document.getElementById('messages-el');
+    let dropdown = document.getElementById('theme-drop-down');
+    let messagesContainer = document.getElementById('messages-el');
 
     dropdown.addEventListener('change', function () {
         // Remove existing theme classes
