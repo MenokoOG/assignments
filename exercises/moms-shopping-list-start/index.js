@@ -1,11 +1,17 @@
 // Shopping list project for V school, Lawrence Menoko OG Jeffeson II, 1-6-24
-
+// BUG NOTES: need to work on when hit enter and being able to persist through page loads.
 document.addEventListener("DOMContentLoaded", () => {
     const submitButton = document.getElementById('submit-el');
     const list = document.getElementById('list');
     const textBox = document.getElementById('title');
+    const form = document.getElementById('add-todo');
 
     submitButton.addEventListener("click", createItem);
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        createItem();
+    });
 
     function createItem() {
         const listItem = document.createElement('li');
@@ -58,7 +64,7 @@ function loadItems() {
     const list = document.getElementById('list');
 
     // Clear existing list items
-    list.innerHTML = "";
+    // list.innerHTML = "";
 
     itemList.forEach(item => {
         const listItem = document.createElement("li");
@@ -79,3 +85,9 @@ function loadItems() {
         list.appendChild(listItem);
     });
 }
+
+// Load items from local storage after DOMContentLoaded event
+document.addEventListener("DOMContentLoaded", loadItems);
+
+
+
