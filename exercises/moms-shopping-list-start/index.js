@@ -1,5 +1,6 @@
 // Shopping list project for V school, Lawrence Menoko OG Jeffeson II, 1-6-24
-// BUG NOTES: need to work on when hit enter and being able to persist through page loads.
+// turned into npm project to be able to access local storage properly and make app function as intended 1-6-24
+// BUG NOTES: line 79 editItem for some reason returns not defined in console
 document.addEventListener("DOMContentLoaded", () => {
     const submitButton = document.getElementById('submit-el');
     const list = document.getElementById('list');
@@ -64,7 +65,7 @@ function loadItems() {
     const list = document.getElementById('list');
 
     // Clear existing list items
-    // list.innerHTML = "";
+    list.innerHTML = "";
 
     itemList.forEach(item => {
         const listItem = document.createElement("li");
@@ -88,6 +89,3 @@ function loadItems() {
 
 // Load items from local storage after DOMContentLoaded event
 document.addEventListener("DOMContentLoaded", loadItems);
-
-
-
