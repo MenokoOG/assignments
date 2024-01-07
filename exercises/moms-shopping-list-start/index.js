@@ -7,12 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
       let textBox = document.getElementById('title')
       let form = document.getElementById('add-todo')
 
-    submitButton.addEventListener("click", createItem);
+    submitButton.addEventListener("click", createItem)
 
     form.addEventListener("submit", (event) => {
         event.preventDefault()
         createItem()
-    });
+    })
 
     function createItem() {
         const listItem = document.createElement('li')
@@ -61,8 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function loadItems() {
-      let itemList = JSON.parse(localStorage.getItem("shoppingList")) || [];
-      let list = document.getElementById('list');
+      let itemList = JSON.parse(localStorage.getItem("shoppingList")) || []
+      let list = document.getElementById('list')
 
     // Clear existing list items
     list.innerHTML = ""
