@@ -2,90 +2,90 @@
 // turned into npm project to be able to access local storage properly and make app function as intended 1-6-24
 // BUG NOTES: line 79 editItem for some reason returns not defined in console
 document.addEventListener("DOMContentLoaded", () => {
-    const submitButton = document.getElementById('submit-el');
-    const list = document.getElementById('list');
-    const textBox = document.getElementById('title');
-    const form = document.getElementById('add-todo');
+      let submitButton = document.getElementById('submit-el')
+      let list = document.getElementById('list')
+      let textBox = document.getElementById('title')
+      let form = document.getElementById('add-todo')
 
     submitButton.addEventListener("click", createItem);
 
     form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        createItem();
+        event.preventDefault()
+        createItem()
     });
 
     function createItem() {
-        const listItem = document.createElement('li');
-        const itemName = document.createElement('div');
-        const edit = document.createElement('button');
-        const remove = document.createElement('button');
+        const listItem = document.createElement('li')
+        const itemName = document.createElement('div')
+        const edit = document.createElement('button')
+        const remove = document.createElement('button')
 
-        edit.textContent = "edit";
-        remove.textContent = "X";
-        itemName.innerHTML = textBox.value;
+        edit.textContent = "edit"
+        remove.textContent = "X"
+        itemName.innerHTML = textBox.value
 
-        edit.addEventListener("click", editItem);
-        remove.addEventListener("click", removeItem);
+        edit.addEventListener("click", editItem)
+        remove.addEventListener("click", removeItem)
 
-        listItem.appendChild(itemName);
-        listItem.appendChild(edit);
-        listItem.appendChild(remove);
-        list.appendChild(listItem);
+        listItem.appendChild(itemName)
+        listItem.appendChild(edit)
+        listItem.appendChild(remove)
+        list.appendChild(listItem)
 
-        updateLocalStorage();
-        textBox.value = ""; // Clear input after adding item
+        updateLocalStorage()
+        textBox.value = "" 
     }
 
     function editItem(event) {
-        const newText = prompt("Please enter new Item name:", event.target.parentNode.childNodes[0].innerHTML) || event.target.parentNode.childNodes[0].innerHTML;
-        event.target.parentNode.childNodes[0].innerHTML = newText;
-        updateLocalStorage();
+          let newText = prompt("Please enter new Item name:", event.target.parentNode.childNodes[0].innerHTML) || event.target.parentNode.childNodes[0].innerHTML;
+        event.target.parentNode.childNodes[0].innerHTML = newText
+        updateLocalStorage()
     }
 
     function removeItem(event) {
-        event.target.parentNode.remove();
-        updateLocalStorage();
+        event.target.parentNode.remove()
+        updateLocalStorage()
     }
 
     function updateLocalStorage() {
-        const itemList = [];
+          let itemList = [];
         list.childNodes.forEach(item => {
-            itemList.push(item.childNodes[0].innerHTML);
+            itemList.push(item.childNodes[0].innerHTML)
         });
 
-        localStorage.setItem("shoppingList", JSON.stringify(itemList));
+        localStorage.setItem("shoppingList", JSON.stringify(itemList))
     }
 
-    // Load items from local storage on page load
-    loadItems();
+   
+    loadItems()
 });
 
 function loadItems() {
-    const itemList = JSON.parse(localStorage.getItem("shoppingList")) || [];
-    const list = document.getElementById('list');
+      let itemList = JSON.parse(localStorage.getItem("shoppingList")) || [];
+      let list = document.getElementById('list');
 
     // Clear existing list items
-    list.innerHTML = "";
+    list.innerHTML = ""
 
     itemList.forEach(item => {
-        const listItem = document.createElement("li");
-        const itemName = document.createElement("div");
-        const edit = document.createElement("button");
-        const remove = document.createElement("button");
+        const listItem = document.createElement("li")
+        const itemName = document.createElement("div")
+        const edit = document.createElement("button")
+        const remove = document.createElement("button")
 
-        itemName.innerHTML = item;
-        edit.textContent = "edit";
-        remove.textContent = "X";
+        itemName.innerHTML = item
+        edit.textContent = "edit"
+        remove.textContent = "X"
 
         edit.addEventListener("click", editItem);
-        remove.addEventListener("click", removeItem);
+        remove.addEventListener("click", removeItem)
 
-        listItem.appendChild(itemName);
-        listItem.appendChild(edit);
-        listItem.appendChild(remove);
-        list.appendChild(listItem);
+        listItem.appendChild(itemName)
+        listItem.appendChild(edit)
+        listItem.appendChild(remove)
+        list.appendChild(listItem)
     });
 }
 
 // Load items from local storage after DOMContentLoaded event
-document.addEventListener("DOMContentLoaded", loadItems);
+document.addEventListener("DOMContentLoaded", loadItems)
