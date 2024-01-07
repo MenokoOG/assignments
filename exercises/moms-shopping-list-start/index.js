@@ -1,6 +1,6 @@
 // Shopping list project for V school, Lawrence Menoko OG Jeffeson II, 1-6-24
 // turned into npm project to be able to access local storage properly and make app function as intended 1-6-24
-// BUG NOTES: line 79 editItem for some reason returns not defined in console
+// BUG NOTES: line 79 or 80 depending  editItem for some reason returns not defined in console
 document.addEventListener("DOMContentLoaded", () => {
       let submitButton = document.getElementById('submit-el')
       let list = document.getElementById('list')
