@@ -1,27 +1,30 @@
-/**
- * QUIZ:
- * 
- * 1. Why do programmers care about loops? What are they good for?
- * Allow a programmer to run the same code many times.
- * 
- * 2. In a for loop, what are the 3 main parts that go into the parentheses?
- * 
- * 
- * 3. Write a loop that logs the numbers 15 to 50 (inclusive) to the console.
- * 
- * 
- * 4. Write a loop that logs the numbers 0 to 10 (inclusive) to the console, but if the number is 7, also log "It's your lucky day!"
- */
-
-// for (/*1. initialize vairables, 2. condition - should I run one more time?, 3. final code that we want to run at the end of the loop*/) {
-//     ...
-// }
-
-// for(var i = 15; i <= 50; i++) {
+// for(let i = 0; i < 10; i += 2){
 //     console.log(i)
 // }
 
-for(let i = 0; i = 10; i++){
-    if(i === 7)
-    console.log("It is your very lucky day!")
+// let favFoods = ["pizza", "pasta", "ice cream", "banana"]
+
+// for( let i = 0; i < favFoods.length; i++){
+//     console.log(favFoods[i])
+// }
+
+// favFoods.push("taco")
+
+// for( let i = 0; i < favFoods.length; i++){
+//     console.log(favFoods[i])
+// }
+
+let numbers = [1, 2, 3, 4, 5, 6]
+
+for(let i = 0; i < numbers.length; i++){
+    if(numbers[i] % 2 === 0){
+        console.log(numbers[i])
+
+    }
+}
+
+let count = 0
+while(count < 10){
+    console.log("hi")
+    count++  // this makes sure it stops and is not infinite.
 }
