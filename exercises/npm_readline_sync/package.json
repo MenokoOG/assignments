@@ -1,9 +1,8 @@
 {
   "name": "npm_readline_sync",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "type": "module",
+ 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,5 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "readline-sync": "^1.4.10"
-  }
+  },
+  "description": ""
 }
