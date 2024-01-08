@@ -1,6 +1,7 @@
 // Shopping list project for V school, Lawrence Menoko OG Jeffeson II, 1-6-24
 // turned into npm project to be able to access local storage properly and make app function as intended 1-6-24
 // BUG NOTES: line 79 or 80 depending  editItem for some reason returns not defined in console
+// to start application, npm start or npm server command. 
 document.addEventListener("DOMContentLoaded", () => {
       let submitButton = document.getElementById('submit-el')
       let list = document.getElementById('list')
@@ -57,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
    
-    loadItems()
+
 });
 
 function loadItems() {
@@ -87,5 +88,5 @@ function loadItems() {
     });
 }
 
-// Load items from local storage after DOMContentLoaded event
+// Load items from local storage after DOMContentLoaded event for item persistance on page refresh
 document.addEventListener("DOMContentLoaded", loadItems)
