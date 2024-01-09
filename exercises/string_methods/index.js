@@ -44,3 +44,13 @@ let whereIsTheF = myFubArr.indexOf("f")
 let isThereAExcla = myFubArr.indexOf("!")
 console.log(whereIsTheF)
 console.log(isThereAExcla) // not in string so returns -1 value
+
+//join method to take array and create a string
+
+const practiceArr = ["this", "is", "so", "very", "cool", "!"]
+
+function sentensify(arr){
+    let str = arr.join(" ")
+    return str
+}
+console.log(sentensify(practiceArr))
