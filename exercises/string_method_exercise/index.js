@@ -56,7 +56,7 @@ let capitalizeFirstHalf = (inputString) => {
     return resultString
   };
   
-  // Example usage:
+  
   let myInputString = "coding javascript rocks!"
   let upLowResult = capitalizeFirstHalf(myInputString)
   console.log(upLowResult)
