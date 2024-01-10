@@ -1,0 +1,65 @@
+/* inline version of project, menoko og, 1-10-24 */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* body {
+    padding: 200px;
+} */
+
+.goRight {
+    float: right;
+}
+
+.rows {
+    width: 800px;
+    height: 150px;
+    margin: auto;
+}
+
+.inHieght {
+    display: inline-block;
+    height: 100%;
+    border: 6px solid white;
+}
+
+.first {
+    
+    margin: auto;
+    background-color: #F5C6D6;
+    border: 6px solid white;
+}
+
+.second {
+    padding: 0 0 0 2px;
+}
+
+.second>div {
+    margin: -2px;
+    display: inline-block;
+    background-color: #EE2E84;
+    height: 100%;
+    width: 25%;
+}
+
+.third>div {
+    background-color: #85CFD8;
+    height: 100%;
+    width: 50%;
+}
+
+#div1 {
+    background-color: #8DC63F;
+    width: 73%;
+    margin: -1px;
+    
+}
+
+#div2 {
+    margin: -1px;
+    background-color: #E76E34;
+    width: 27%;
+    
+}
