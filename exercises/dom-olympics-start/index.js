@@ -29,21 +29,21 @@ newRight2El.textContent = "Heck yeah. let's do this!!!"
 
 clearBtnEl.addEventListener('click', function() {
     
-    messagesDiv.innerHTML = '';
-});
+    messagesDiv.innerHTML = ''
+})
 
 document.addEventListener('DOMContentLoaded', function () {
-    let dropdown = document.getElementById('theme-drop-down');
-    let messagesContainer = document.getElementById('messages-el');
+    let dropdown = document.getElementById('theme-drop-down')
+    let messagesContainer = document.getElementById('messages-el')
 
     dropdown.addEventListener('change', function () {
         // Remove existing theme classes
-        messagesContainer.classList.remove('theme-one', 'theme-two');
+        messagesContainer.classList.remove('theme-one', 'theme-two')
 
         // Add the selected theme class
-        messagesContainer.classList.add(dropdown.value);
-    });
-});
+        messagesContainer.classList.add(dropdown.value)
+    })
+})
 
 
 
