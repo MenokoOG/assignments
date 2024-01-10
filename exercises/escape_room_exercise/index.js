@@ -1,12 +1,12 @@
 // Exercise for V School, Lawrence "Menoko OG" Jefferson II, Date: 1-9-24
 
-const readline = require("readline-sync");
+const readline = require("readline-sync")
 
 class RoomEscapeGame {
   constructor() {
-    this.hasKey = false;
-    this.isDoorOpen = false;
-    this.isHandInHole = false;
+    this.hasKey = false
+    this.isDoorOpen = false
+    this.isHandInHole = false
   }
 
   startGame() {
@@ -23,18 +23,18 @@ class RoomEscapeGame {
 
   findKey() {
     console.log("You search the room and find a key!")
-    this.hasKey = true;
+    this.hasKey = true
   }
 
   putHandInHole() {
     console.log("You put your hand in the hole and unfortunately, you die.")
-    this.isHandInHole = true;
+    this.isHandInHole = true
   }
 
   openDoor() {
     if (this.hasKey) {
       console.log("Congratulations! You've successfully escaped the room!")
-      this.isDoorOpen = true;
+      this.isDoorOpen = true
     } else {
       console.log("The door is locked. You need to find the key first.")
     }
@@ -44,7 +44,7 @@ class RoomEscapeGame {
     while (!this.isDoorOpen && !this.isHandInHole) {
       this.displayOptions();
       const choice = readline.question("Enter your choice (1-3): ")
-
+// to better handle edge case
       switch (choice) {
         case "1":
           this.findKey()
