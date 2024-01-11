@@ -2,6 +2,11 @@
 
 const readline = require("readline-sync")
 
+const options = ['option 1', 'option 2', 'option 3']
+
+const decision = readline.keyInSelect(options, 'Which option do you want?')
+readline.prompt()
+
 class RoomEscapeGame {
   constructor() {
     this.hasKey = false

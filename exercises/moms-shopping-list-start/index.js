@@ -38,8 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function editItem(event) {
-        let newText = prompt("Please enter new Item name:", event.target.parentNode.childNodes[0].innerHTML) || event.target.parentNode.childNodes[0].innerHTML;
-      event.target.parentNode.childNodes[0].innerHTML = newText
+        let newText = prompt("Please enter new Item name:", event.target.parentNode.childNodes[0].textContent) || event.target.parentNode.childNodes[0].innerHTML;
+      event.target.parentNode.childNodes[0].textContent = newText
       updateLocalStorage()
   }
 
