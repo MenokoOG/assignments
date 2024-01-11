@@ -68,7 +68,7 @@ function loadItems() {
     // Clear existing list items
     list.innerHTML = ""
 
-    itemList.forEach(item => {
+    itemList.forEach(item) => {
         const listItem = document.createElement("li")
         const itemName = document.createElement("div")
         const edit = document.createElement("button")
