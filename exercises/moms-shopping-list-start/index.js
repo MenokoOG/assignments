@@ -85,7 +85,7 @@ function loadItems() {
         listItem.appendChild(edit)
         listItem.appendChild(remove)
         list.appendChild(listItem)
-    });
+    })
 }
 
 // Load items from local storage after DOMContentLoaded event for item persistance on page refresh
