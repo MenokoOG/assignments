@@ -4,10 +4,23 @@
     font-family: sans-serif;
     font-weight: lighter;
 }
+
+body{
+    background-color: #283149;
+}
+
+p{
+    color: #DBEDF3;
+    padding: 7px; 
+}
+
+input{
+    margin-bottom: 15px;
+}
 #calc-title{
     display: grid;
     justify-content: center;
-    color: darkmagenta;
+    color: #DBEDF3;
     font-weight: bold;
     margin-bottom: 50px;
     
@@ -35,7 +48,7 @@
 #add-total{
     margin-top: 15px;
     font-weight: bold;
-    color: blue;
+    color: rgb(235, 18, 220);
 }
 
 #sub-total{
@@ -48,6 +61,13 @@
     margin-top: 15px;
     font-weight: bold;
     color: orangered;
+}
+
+.op-title{
+    font-size: 2rem;
+  color: #DBEDF3;
+  font-family: "Arvo", cursive;
+  text-shadow: 3px 0 #DA0463;
 }
 
 
