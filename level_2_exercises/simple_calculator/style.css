@@ -1,0 +1,54 @@
+* { /* Resets and Default styling */
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+#calc-title{
+    display: grid;
+    justify-content: center;
+    color: darkmagenta;
+    font-weight: bold;
+    margin-bottom: 50px;
+    
+}
+
+#calc-box{
+    display: grid;
+    justify-content: center;
+}
+
+#add-el{
+    display: grid;
+    margin-bottom: 50px;
+}
+#sub-el{
+    display: grid;
+    margin-bottom: 50px;
+}
+
+#multi-el{
+    display: grid;
+    
+}
+
+#add-total{
+    margin-top: 15px;
+    font-weight: bold;
+    color: blue;
+}
+
+#sub-total{
+    margin-top: 15px;
+    font-weight: bold;
+    color: burlywood;
+}
+
+#multi-total{
+    margin-top: 15px;
+    font-weight: bold;
+    color: orangered;
+}
+
+
+
