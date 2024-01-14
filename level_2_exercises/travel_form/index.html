@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Travel Form Exercise</title>
+</head>
+
+<body>
+    <h1 id="travelTitle">Small Travels Travel Plan Form</h1>
+
+    <div id="imgWrapper">
+        <img id="planeImg" src="./assets/airplane.jpg" alt="picture of plaen in air">
+    </div>
+    <hr />
+    <div id="formWrapper">
+        <h2>Travel Form: Please fill out and then submit when complete, thank you.</h2>
+        <form name="travelForm" onsubmit="handleSubmit(event)">
+            <label for="firstName" class="first-name">First Name</label>
+            <input id="firstName" name="firstName" type="text">
+
+            <label for="lastName" class="last-name">Last Name</label>
+            <input id="lastName" name="lastName" type="text">
+
+            <label for="age">Age</label>
+            <input id="age" name="age" type="number">
+
+            <label for="gender">Gender: </label>
+            <label for="male">Male</label>
+            <input id="male" type="radio" name="gender" value="Male"/>
+            <label for="female">Female</label>
+            <input id="female" type="radio" name="gender" value="Female"/>
+
+            <label for="location">Location:</label>
+            <select id="location" name="location">
+                <option value="Moscow">Moscow</option>
+                <option value="Azzeezabad">Azzeezabad</option>
+                <option value="Antarctica">Antarctica</option>
+            </select>
+
+            <label for="diet">Special Diets:</label>
+            <label for="vegetarian">Vegetarian</label>
+            <input id="vegetarian" type="checkbox" value="vegetarian" name="specialDiet" />
+            <label for="kosher">Kosher</label>
+            <input id="kosher" type="checkbox" value="Kosher" name="specialDiet" />
+            <label for="lactose">Lactose</label>
+            <input id="lactose" type="checkbox" value="Lactose" name="specialDiet" />
+            <label for="gluten">Gluten Free</label>
+            <input id="gluten" type="checkbox" value="Gluten" name="specialDiet" />
+            <label for="meat">All Meat</label>
+            <input id="meat" type="checkbox" value="Meat" name="specialDiet" />
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>

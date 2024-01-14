@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-image: linear-gradient(burlywood, green);
+  background-attachment: fixed;
+}
+
+#travelTitle {
+  display: grid;
+  justify-content: center;
+  margin: 15px 15px;
+  font-weight: bold;
+  color: blueviolet;
+}
+
+#imgWrapper {
+  display: grid;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#planeImg {
+  height: 300px;
+  width: 500px;
+}
+
+h2 {
+  margin: 20px 20px;
+  padding: 10px 10px;
+  color: rgb(41, 41, 39);
+  font-weight: bolder;
+  text-align: center;
+}
+
+form {
+  display: grid;
+  padding: 1em;
+  background: #f9f9f9;
+  border: 1px solid #c1c1c1;
+  margin: 2rem auto 0 auto;
+  max-width: 600px;
+  padding: 1em;
+}
+
+form input {
+  background: #fff;
+  border: 1px solid #9c9c9c;
+}
+
+form button {
+  background: lightgrey;
+  padding: 0.7em;
+  width: 100%;
+  border: 0;
+}
+
+form button:hover {
+  background: gold;
+}
+
+label {
+  padding: 0.5em 0.5em 0.5em 0;
+}
+
+#diet {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 0.7em;
+  margin-bottom: 0.5rem;
+}
+
+input:focus {
+  outline: 3px solid gold;
+}
+
+@media (min-width: 400px) {
+  form {
+      grid-template-columns: 200px 1fr;
+      grid-gap: 16px;
+  }
+
+  label {
+      text-align: right;
+      grid-column: 1 / 2;
+  }
+
+  input,
+  button {
+      grid-column: 2 / 3;
+  }
+}
