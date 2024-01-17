@@ -1,0 +1,84 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    background-color: initial; /* Added this line to set initial background color */
+}
+
+#box1 {
+    background-color: #3498db;
+}
+
+#box2 {
+    background-color: #e74c3c;
+}
+
+#box3 {
+    background-color: #2ecc71;
+}
+
+#box4 {
+    background-color: #f39c12;
+}
+
+#box5 {
+    background-color: #9b59b6;
+}
+
+#box6 {
+    background-color: #1abc9c;
+}
+
+.box:hover {
+    background-color: #3498db; /* Change this to the desired hover background color */
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    opacity: 0.8;
+}
+
+#box1:hover {
+    transform: rotate(360deg);
+    background-color: #9b59b6;
+}
+
+#box2:hover {
+    transform: translateY(-20px);
+    background-color: aqua;
+}
+
+#box3:hover {
+    transform: scale(1.2);
+    background-color: crimson;
+}
+
+#box4:hover {
+    transform: rotate(-45deg);
+    background-color: darkgreen;
+}
+
+#box5:hover {
+    transform: translateX(20px);
+    background-color: gold;
+}
+
+#box6:hover {
+    transform: scaleY(1.2);
+    background-color: chartreuse;
+}
+
+audio {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+}
