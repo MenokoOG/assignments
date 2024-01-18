@@ -1,44 +1,42 @@
 .container {
-    /* give the container display grid */
-    /* with six rows, 50px high */
-    /* default all cells/children on the left be 2/3 the screen width, and all on the left 1/3 */
+    display: grid;
+    grid-template-rows: repeat(6, 50px);
+    grid-template-columns: 2fr 1fr;
 }
+
 .container > div {
     border: solid black 2px;
 }
 
 .authors {
-    background-color: lightcoral
+    background-color: lightcoral;
 }
+
 .links {
-    background-color: lightpink
+    background-color: lightpink;
 }
 
 .footer {
-    /* make these span the width of the page */
+    width: 100%;
     background-color: aquamarine;
+    grid-column: 1 / -1;
 }
 
-@media (max-width: 900px){
-    /* use this media query to help these two cells drop to the bottom when screens are smaller */
-    .authors {
-         
+@media (max-width: 900px) {
+    .authors, .links {
+        order: 1; /* Change the order to make them appear at the bottom */
     }
-    .links {
 
-    }
-    /* container could use some help so that it's children are full screen width */
     .container {
-        
+        grid-template-columns: 1fr; /* Change to a single column for smaller screens */
     }
 }
 
 /* FLEX */
-/* use flexbox to make the icons behave like css zen garden's social icons */
 .icons {
     display: flex;
     justify-content: space-around;
-    width: 50%;
+    width: 100%; /* Change to full width */
     margin: auto;
     padding: 10px;
 }
