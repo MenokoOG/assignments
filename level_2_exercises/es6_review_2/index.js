@@ -52,4 +52,4 @@ function greet(name, greeting = "hello"){
     return `${greeting} ${name}`
 }
 
-console.log(greet('Emily'))
+console.log(greet("ZoltanFool", "Howdy!"))

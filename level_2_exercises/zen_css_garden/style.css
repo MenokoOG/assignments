@@ -8,11 +8,64 @@ html, body {
     font-family: 'Libre Baskerville', sans-serif;
     font-size: 70%;
   }
+  /* @font-face {
+	font-family: 'verdemoderna';
+	src:url('verdemoderna.eot');
+	src:url('verdemoderna.eot?#iefix') format('embedded-opentype'),
+		url('verdemoderna.woff') format('woff'),
+		url('verdemoderna.ttf') format('truetype'),
+		url('verdemoderna.svg#verdemoderna') format('svg');
+	font-weight: normal;
+	font-style: normal;
+  } */
 
+h1 {
+    width: 100%;
+    margin-bottom: 4px;
+    color: #FFFF;
+    font-size: 24px;
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: normal;
+}
+
+h2 {
+    width: 100%;
+    font-size: 14px;
+    font-family: 'Libre Baskerville', sans-serif;
+    margin: 4px 0;
+    color: rgb(255, 255, 255, 0.6);
+    font-style: italic;
+    font-weight: normal;
+}
+
+h3 {
+    margin: 3px 0 0 0;
+    color: #2e484c;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+p {
+    font-size: 14px;
+    margin: 12px 0;
+    line-height: 2;
+    color: #325050;
+    font-family: 'Libre Baskerville', sans-serif;
+}
 .container {
     display: grid;
-    grid-template-rows: repeat(6, 50px);
+    
     grid-template-columns: 2fr 1fr;
+}
+.col-1{
+    grid-column: 1 / 2;
+}
+.col-2{
+    grid-column: 2 / -1;
+}
+#sec-four{
+    grid-column: 2 / -1;
 }
 
 .container > div {
@@ -21,6 +74,7 @@ html, body {
 
 .authors {
     background-color: lightcoral;
+    grid-column: 2 / -1;
 }
 
 .links {

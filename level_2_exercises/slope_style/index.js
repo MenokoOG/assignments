@@ -1,0 +1,1 @@
+// slope style assignment, menoko og
