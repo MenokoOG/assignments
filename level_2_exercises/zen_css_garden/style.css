@@ -1,14 +1,16 @@
+/*General styling*/
 @import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Libre+Baskerville:400,400italic);
 
 html, body {
     padding: 0;
     margin: 0;
   }
+  
   body {
     color: #325050;
     background: #fff;
+    font-size: 80%;
     font-family: 'Libre Baskerville', sans-serif;
-    font-size: 70%;
     background-image: url(./assets/images/bamboo.png);
   
 }
@@ -19,28 +21,29 @@ abbr {
     letter-spacing: 0.01em;
 }
 h1 {
-    display: inline-block;
-    position: relative;
-    margin: 15px 0 0 0;
-    padding: 60px 0 5px 0;
-    border-bottom: none;
+   display: inline-flex;
     font-family: 'Julius Sans One', sans-serif;
     font-size: 3.2em;
     text-transform: uppercase;
     color: rgba(255,255,255,0.6);
     font-weight: bold;
+    
+}
+#leftM{
+    margin-left: 100px;
+    margin-top: 40px;
+}
+#div1-h2{
+  margin-left: 100px;
 }
 
 h2{
-border-top: none;
+    
     color: rgba(255,255,255,0.6);
     font-size: 1.6em;
     font-style: italic;
     font-weight: normal;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    
 }
 
 h3 {
@@ -52,28 +55,16 @@ h3 {
     text-transform: uppercase;
     
 }
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    margin: 0.75em 0;
-    line-height: 2;
+p {   
+   margin: 0.75em 0;
+   line-height: 2;
 }
 
 ul {
-    display: block;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
+    
+    
 }
 li {
-    display: block;
-    margin-bottom: 0.25em;
     font-family: 'Julius Sans One', sans-serif;
     font-size: 1.2em;
     font-style: normal;
@@ -84,11 +75,24 @@ li {
     font-size: 0.9em;
     font-style: normal;
 }
+#viewall {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 71px;
+    line-height: 50px;
+    margin-bottom: 0.25em;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.2em;
+    font-style: normal;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+}
 a:visited {
     color: #1a5952;
 }
 
-
+/*  GRID LAYOUT on DIVS*/
 .container {  display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     grid-template-rows: 1.5fr 1.5fr 1.5fr 2.5fr 0.5fr 0.5fr;
@@ -107,17 +111,52 @@ a:visited {
     grid-area: div-2; 
     height: 310px;
     background-image: url(./assets/images/huntington.jpg);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    
+    
+    
+    
+    
 }
+#sec2-btn{
+  height: 60px;
+  width: 300px;
+  margin-top: 40px;
+}
+
+
   
   .div-1 { 
     grid-area: div-1;
     height: 310px;
     background-image: url(./assets/images/huntington.jpg);
+    /* display: flex;
+    justify-content: center; */
+    
+    
+    
+    
  }
   
-  .div-3 { grid-area: div-3; }
+  .div-3 > p{ 
+    grid-area: div-3;
+    color: #2e484c;
+    display: flex;
+    justify-content: center;
+    
+    
+    
+    
+}
   
-  .div-4 { grid-area: div-4; }
+  .div-4 { 
+    grid-area: div-4;
+    display: flex;
+    justify-content: center;
+    
+ }
   
   .div-5 { 
     grid-area: div-5;
@@ -126,6 +165,9 @@ a:visited {
     background-image: url(./assets/images/contours.png), url(./assets/images/gridlines.png), url(./assets/images/bamboo.png);
     background-repeat: repeat, repeat, no-repeat;
     background-size: auto, auto, cover;
+    display: flex;
+    justify-content: center;
+    
 } 
 
   
@@ -136,10 +178,18 @@ a:visited {
     background-image: url(./assets/images/contours.png), url(./assets/images/gridlines.png), url(./assets/images/bamboo.png);
     background-repeat: repeat, repeat, no-repeat;
     background-size: auto, auto, cover;
+    display: flex;
+    justify-content: center;
+    
      
 }
   
-  .div-7 { grid-area: div-7; }
+  .div-7 { 
+    grid-area: div-7;
+    display: flex;
+    justify-content: center;
+     
+ }
   
   .div-8 { 
     grid-area: div-8;
@@ -149,6 +199,17 @@ a:visited {
   .div-9 { 
     grid-area: div-9; 
     background-image: url(./assets/images/contours.png), url(./assets/images/gridlines.png), url(./assets/images/noise.png), url(./assets/images/koi.jpg); 
+    color: #fff;
+    
+}
+.div-9 > h2{
+  margin-left: 100px;
+    margin-top: 70px;
+}
+
+.div-9 > h3{
+    color: #fff;
+    justify-content: center;
 }
   
   .div-10 { 
@@ -161,7 +222,7 @@ a:visited {
  }
 
 
-/* FLEX */
+/* FLEX for Icons in div 10*/
 .icons {
     display: flex;
     justify-content: space-around;
