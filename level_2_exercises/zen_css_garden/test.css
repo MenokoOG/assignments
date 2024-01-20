@@ -1,0 +1,63 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas:
+      "div-2 div-1"
+      "div-4 div-3"
+      "div-6 div-5"
+      ". div-7"
+      "div-10 div-8"
+      "div-10 div-9";
+  }
+  
+  .div-4,
+  .div-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .div-9,
+  .div-10 {
+    grid-column: 1 / -1;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      grid-template-rows: repeat(4, auto);
+      grid-template-areas:
+        "div-2 div-1"
+        "div-4 div-3"
+        "div-10 div-5"
+        "div-10 div-7"
+        "div-10 div-9"
+        "div-10 div-6";
+    }
+  }
+  
+  /* Additional styles for content containment and visual adjustments */
+  .div-1,
+  .div-3,
+  .div-5,
+  .div-7,
+  .div-8 {
+    overflow: auto; /* Keep content within divs */
+  }
+  
+  /* Adjust spacing, margins, padding, etc. as needed for visual appeal */
+/* FLEX for Icons in div 10*/
+.icons {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+}
+
+.icons > div {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
+}  

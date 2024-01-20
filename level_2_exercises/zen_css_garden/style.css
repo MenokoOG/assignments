@@ -31,7 +31,7 @@ h1 {
 }
 #leftM{
     margin-left: 100px;
-    margin-top: 40px;
+    /* margin-top: 40px; */
 }
 #div1-h2{
   margin-left: 100px;
@@ -47,7 +47,7 @@ h2{
 }
 
 h3 {
-    margin: 2em 0 0 0;
+    
     color: #2e484c;
     font-family: 'Julius Sans One', sans-serif;
     font-size: 1.8em;
@@ -56,7 +56,7 @@ h3 {
     
 }
 p {   
-   margin: 0.75em 0;
+   
    line-height: 2;
 }
 
@@ -105,15 +105,19 @@ a:visited {
       "div-7 div-8"
       "div-9 div-9"
       "div-10 div-10";
+      
   }
   
   .div-2 { 
     grid-area: div-2; 
     height: 310px;
     background-image: url(./assets/images/huntington.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
     color: #fff;
     display: flex;
     justify-content: center;
+    align-content: center;
     
     
     
@@ -123,15 +127,19 @@ a:visited {
 #sec2-btn{
   height: 60px;
   width: 300px;
-  margin-top: 40px;
+  
 }
 
 
   
   .div-1 { 
     grid-area: div-1;
-    height: 310px;
+    height: 300px;
     background-image: url(./assets/images/huntington.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    object-fit: contain;
+    overflow: hidden;
     /* display: flex;
     justify-content: center; */
     
@@ -144,7 +152,7 @@ a:visited {
     grid-area: div-3;
     color: #2e484c;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     
     
     
@@ -166,7 +174,7 @@ a:visited {
     background-repeat: repeat, repeat, no-repeat;
     background-size: auto, auto, cover;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     
 } 
 
