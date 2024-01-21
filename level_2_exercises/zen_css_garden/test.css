@@ -1,63 +1,197 @@
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(6, auto);
-    grid-template-areas:
-      "div-2 div-1"
-      "div-4 div-3"
-      "div-6 div-5"
-      ". div-7"
-      "div-10 div-8"
-      "div-10 div-9";
-  }
-  
-  .div-4,
-  .div-6 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .div-9,
-  .div-10 {
-    grid-column: 1 / -1;
-  }
-  
-  @media (max-width: 768px) {
-    .container {
-      grid-template-rows: repeat(4, auto);
-      grid-template-areas:
-        "div-2 div-1"
-        "div-4 div-3"
-        "div-10 div-5"
-        "div-10 div-7"
-        "div-10 div-9"
-        "div-10 div-6";
-    }
-  }
-  
-  /* Additional styles for content containment and visual adjustments */
-  .div-1,
-  .div-3,
-  .div-5,
-  .div-7,
-  .div-8 {
-    overflow: auto; /* Keep content within divs */
-  }
-  
-  /* Adjust spacing, margins, padding, etc. as needed for visual appeal */
-/* FLEX for Icons in div 10*/
-.icons {
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
-    margin: auto;
-    padding: 10px;
+@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Libre+Baskerville:400,400italic);
+
+body {
+  color: #325050;
+  background: #fff;
+  font-size: 80%;
+  font-family: 'Libre Baskerville', sans-serif;
+  background-image: url(./assets/images/bamboo.png);
 }
 
-.icons > div {
-    width: 30px;
-    height: 30px;
-    background-color: black;
-    border-radius: 50%;
-}  
+h1 {
+  display: inline-flex;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 2.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: bold;
+
+}
+
+h2 {
+
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.6em;
+  font-style: italic;
+  font-weight: normal;
+
+}
+li{
+  padding: 1.5em 0 1.25em 0;
+}
+
+#sec2-btn {
+  height: 60px;
+  width: 300px;
+  margin-top: 20px;
+  color: #fff;
+  font-weight: bolder;
+  background: rgba(255,255,255,0.1);
+  
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 1.2em;
+  font-style: normal;
+  text-transform: uppercase;
+  justify-content: center;
+
+}
+#big-arr{
+  font-size: xx-large;
+  margin-left: 15px;
+  justify-content: center;
+  align-content: center;
+  
+}
+#link-4{
+  margin-bottom: 0.25em;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.2em;
+    font-style: normal;
+    text-transform: uppercase;
+}
+.designer-name{
+  color: #616857;
+  font-size: 0.9em;
+  font-style: normal;
+}
+
+#link-6{
+  margin-bottom: 0.25em;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.2em;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6, auto);
+  grid-template-areas:
+    "div-2 div-1"
+    "div-4 div-3"
+    "div-6 div-5"
+    ". div-7"
+    "div-10 div-8"
+    "div-10 div-9";
+}
+
+.div-4 {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-6 {
+  background-color: rgba(138, 188, 159, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around
+}
+
+.div-9,
+.div-10 {
+  grid-column: 1 / -1;
+  color: #fff;
+  background: #134347;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      "div-1"
+      "div-2"
+      "div-3"
+      "div-5"
+      "div-7"
+      "div-8"
+      "div-4"
+      "div-6"
+      "div-10"
+      "div-9";
+  }
+}
+
+
+/* Additional styles for content containment and visual adjustments */
+.div-1 {
+  grid-area: div-1;
+  background-image: url(./assets/images/huntington.jpg);
+  display: flex;
+
+  justify-content: space-around;
+
+}
+
+.div-2 {
+  grid-area: div-2;
+
+  background-image: url(./assets/images/huntington.jpg);
+  background-repeat: no-repeat;
+
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+
+}
+
+.div-3 {
+  color: #325050;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.div-5 {
+  background-attachment: scroll, scroll, fixed;
+  background-color: rgba(138, 188, 159, 0.5);
+  background-image: url(./assets/images/contours.png), url(./assets/images/gridlines.png), url(./assets/images/bamboo.png);
+  background-repeat: repeat, repeat, no-repeat;
+  background-size: auto, auto, cover;
+  background-attachment: scroll, scroll, fixed;
+}
+
+.div-7,
+.div-8 {
+  overflow: auto;
+  /* Keep content within divs */
+}
+
+.div-9 {
+  background-image: url(./assets/images/contours.png), url(./assets/images/gridlines.png), url(./assets/images/noise.png), url(./assets/images/koi.jpg);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+/* Adjust spacing, margins, padding, etc. as needed for visual appeal */
+/* FLEX for Icons in div 10*/
+.icons {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+}
+
+.icons>div {
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+}

@@ -109,8 +109,8 @@ a:visited {
   }
   
   .div-2 { 
-    grid-area: div-2; 
-    height: 310px;
+    grid-area: div-1; 
+    
     background-image: url(./assets/images/huntington.jpg);
     background-repeat: no-repeat;
     background-size: contain;
@@ -134,18 +134,11 @@ a:visited {
   
   .div-1 { 
     grid-area: div-1;
-    height: 300px;
     background-image: url(./assets/images/huntington.jpg);
     background-repeat: no-repeat;
     background-size: contain;
-    object-fit: contain;
-    overflow: hidden;
-    /* display: flex;
-    justify-content: center; */
-    
-    
-    
-    
+    justify-content: center;
+    align-content: center;   
  }
   
   .div-3 > p{ 
