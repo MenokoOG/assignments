@@ -19,10 +19,10 @@ axios.get('https://swapi.dev/api/people/1/')
         console.error(error);
     });
 
-// Replace [your_name] with your actual name
+
 const todoUrl = 'https://api.vschool.io/lawrencejefferson/todo';
 
-// Replace [your_name] with your actual name and adjust the data accordingly
+
 const todoData = [
     {
         title: "Task 1",
@@ -57,7 +57,7 @@ todoData.forEach(async todo => {
     }
 });
 
-// Replace [your_name] with your actual name
+
 const getAllTodosUrl = 'https://api.vschool.io/lawrencejefferson/todo';
 
 try {
@@ -67,7 +67,7 @@ try {
     console.error(error);
 }
 
-// Replace [your_name] and [todo_id] with your actual name and todo ID
+
 const getOneTodoUrl = 'https://api.vschool.io/lawrencejefferson/todo/[todo_id]';
 
 try {
@@ -77,7 +77,7 @@ try {
     console.error(error);
 }
 
-// Replace [your_name] and [todo_id] with your actual name and todo ID
+
 const deleteOneTodoUrl = 'https://api.vschool.io/lawrencejefferson/todo/[todo_id]';
 
 try {
@@ -87,10 +87,10 @@ try {
     console.error(error);
 }
 
-// Replace [your_name] and [todo_id] with your actual name and todo ID
+
 const putOneTodoUrl = 'https://api.vschool.io/lawrencejefferson/todo/[todo_id]';
 
-// Replace [your_name] with your actual name and adjust the data accordingly
+
 const updatedTodoData = {
     title: "Updated Task",
     description: "Updated description",
