@@ -1,0 +1,38 @@
+{
+    "data": [
+        {
+            "name": "Rambo",
+            "age": 1003,
+            "isAlive": true,
+            "friends": [
+                "tom",
+                "jojo",
+                "frank"
+            ],
+            "address": {
+                "street": "123 my road",
+                "city": "Some where"
+            }
+        },
+        {
+            "name": "Rambo",
+            "age": 1003,
+            "isAlive": true,
+            "friends": ["tom", "jojo", "frank"],
+            "address": {
+                "street": "123 my road",
+                "city": "Some where"
+            }
+        },
+        {
+            "name": "Rambo",
+            "age": 1003,
+            "isAlive": true,
+            "friends": ["tom", "jojo", "frank"],
+            "address": {
+                "street": "123 my road",
+                "city": "Some where"
+            }
+        }
+    ]
+}

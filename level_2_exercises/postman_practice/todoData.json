@@ -1,0 +1,9 @@
+{
+  "title": "This is required",
+  "description": "This is optional",
+  "main": "index.js",
+  "type": "module",
+  "price": 0,
+  "imgUrl": "http://path-to-url.jpg",
+  "completed": false
+}

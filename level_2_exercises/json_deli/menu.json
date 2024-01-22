@@ -1,0 +1,65 @@
+// json exercise, menoko og, 1-21-24
+
+{
+    "appetizers": [
+      {
+        "name": "Byte-sized Bruschetta",
+        "ingredients": ["Tomatoes", "Basil", "Garlic", "Baguette slices"],
+        "description": "A delightful appetizer with a tech twist, featuring byte-sized bruschetta on crispy baguette slices."
+      },
+      {
+        "name": "Code Crunchy Nachos",
+        "ingredients": ["Tortilla chips", "Cheese", "Salsa", "Guacamole"],
+        "description": "Crunchy nachos loaded with coding goodness, perfect for a quick byte between tasks."
+      }
+    ],
+    "cold_sandwiches": [
+      {
+        "name": "HTML Ham & Cheese",
+        "ingredients": ["Ham", "Cheese", "Lettuce", "Tomato", "Mayo"],
+        "description": "A classic cold sandwich with a techy twist, featuring HTML (Ham, Tomato, Mayo, Lettuce) layers."
+      },
+      {
+        "name": "CSS Caprese",
+        "ingredients": ["Mozzarella", "Tomatoes", "Basil", "Balsamic glaze"],
+        "description": "A refreshing cold sandwich inspired by CSS (Cheese, Stack, Sauce), featuring mozzarella and tomatoes."
+      }
+    ],
+    "hot_sandwiches": [
+      {
+        "name": "Python Pesto Panini",
+        "ingredients": ["Chicken", "Pesto", "Roasted red peppers", "Ciabatta"],
+        "description": "A hot and savory panini inspired by Python, featuring grilled chicken, pesto, and roasted red peppers."
+      },
+      {
+        "name": "Java Jalapeño Grilled Cheese",
+        "ingredients": ["Cheddar cheese", "Jalapeños", "Sourdough bread"],
+        "description": "Spice up your coding session with this hot grilled cheese, featuring Java (Jalapeños and Authentic cheddar)."
+      }
+    ],
+    "desserts": [
+      {
+        "name": "Cookie.js Delight",
+        "ingredients": ["Chocolate chips", "Walnuts", "Butter", "Flour"],
+        "description": "A sweet treat for developers, featuring homemade cookies with a touch of JavaScript magic."
+      },
+      {
+        "name": "Caramel API Apple Pie",
+        "ingredients": ["Apples", "Caramel", "Pie crust"],
+        "description": "Indulge in a slice of this warm apple pie, topped with a layer of caramel for that extra sweetness."
+      }
+    ],
+    "drinks": [
+      {
+        "name": "Java Jolt Espresso",
+        "ingredients": ["Espresso", "Steamed milk", "Vanilla syrup"],
+        "description": "Get a coding boost with this strong espresso drink, perfect for those late-night coding sessions."
+      },
+      {
+        "name": "Debugging Cold Brew",
+        "ingredients": ["Cold brew coffee", "Cream", "Simple syrup"],
+        "description": "Cool down and refresh with this specially crafted cold brew, designed to help you debug your day."
+      }
+    ]
+  }
+  
