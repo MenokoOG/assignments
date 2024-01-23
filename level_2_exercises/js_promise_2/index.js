@@ -41,34 +41,34 @@ const orderPizza = new Promise((resolve, reject) => {
       const isPizzaReady = true;
   
       if (isPizzaReady) {
-        resolve("Yay! Pizza is ready 🍕");
+        resolve("Yay! Pizza is ready 🍕")
       } else {
-        reject("Oh no! Pizza is not ready 😢");
+        reject("Oh no! Pizza is not ready 😢")
       }
     }, 2000); // 2000 milliseconds (2 seconds) delay
-  });
+  })
   
   const addToppings = (message) => {
     return new Promise((resolve) => {
       // Simulating adding toppings (asynchronous)
       setTimeout(() => {
-        resolve(`${message} + Mushrooms 🍄`);
+        resolve(`${message} + Mushrooms 🍄`)
       }, 1000); // 1000 milliseconds (1 second) delay
-    });
-  };
+    })
+  }
   
   // Ordering and handling the promise asynchronously
   orderPizza
     .then((message) => {
-      console.log("Step 1:", message);
-      return addToppings(message);
+      console.log("Step 1:", message)
+      return addToppings(message)
     })
     .then((finalMessage) => {
       console.log("Step 2:", finalMessage);
     })
     .catch((error) => {
       console.error(error);
-    });
+    })
   
-  console.log("Waiting for pizza to be ready... 🕒");
+  console.log("Waiting for pizza to be ready... 🕒")
   
