@@ -6,15 +6,27 @@ function getData(){
         .catch(err => console.log(err))
 }
 
+// innerHTML
+
 
 // LISTS THE TODO TITLES TO THE DOM
 function listData(data){
+    // document.getElementById('todo-list').innerHTML = ""
+    clearList()
     for(let i = 0; i < data.length; i++){
         const h1 = document.createElement('h1')
         h1.textContent = data[i].title
         document.getElementById('todo-list').appendChild(h1)
     }
+
 }
+function clearList(){
+    const el = document.getElementById('todo-list')
+    while(el.firstChild){
+        el.removeChild(el.firstChild)
+    }
+}
+
 
 getData()
 
@@ -31,7 +43,7 @@ todoForm.addEventListener("submit", function(e){
     
     todoForm.title.value = ""
     
-    axios.post("https://api.vschool.io/natej/todo", newTodo)
+    axios.post("https://api.vschool.io/johnsmith2/todo", newTodo)
         .then(res => getData())
         .catch(err => console.log(err))
 })
