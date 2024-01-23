@@ -6,7 +6,7 @@ function getPokemonData() {
         .then(response => {
             // Assuming your data structure is response.data.objects
             const pokemonArray = response.data.objects[0].pokemon
-            
+
             // Step Two - Display the data
             displayPokemonNames(pokemonArray)
         })
