@@ -1,5 +1,7 @@
 // pokemon list assignment, menoko og, 1-23-24
 
+// pokemon list assignment, menoko og, 1-23-24
+
 // Step One - Get the data
 function getPokemonData() {
     axios.get('https://api.vschool.io/pokemon')
@@ -24,8 +26,8 @@ function displayPokemonNames(pokemonArray) {
 
     //  each item in pokemonArray is an object with a name property
     for (const pokemonObj of pokemonArray) {
-        // Access the name property
-        const pokemonName = pokemonObj.name
+        // Access the name property and convert to uppercase
+        const pokemonName = pokemonObj.name.toUpperCase()
 
         // Create a new <li> element for each Pokémon's name
         const listItem = document.createElement('li')
@@ -41,6 +43,7 @@ function displayPokemonNames(pokemonArray) {
 
 // Call the function to get Pokémon data
 getPokemonData()
+
 
 
 

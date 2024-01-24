@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: blueviolet;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 80vh;
+    background-color: rgb(58, 108, 173);
+    color: rgb(240, 108, 13);
+}
+
+li {
+    background-color: white; /* Adjust as needed */
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* Add any additional styling as needed */
