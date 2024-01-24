@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     inputElements.forEach(input => {
       input.addEventListener('input', updateTotalPrice);
     });
-  
+  // function for price changes to add to eventlistner callback
     function updateTotalPrice() {
         let totalCoins = 0;
         inputElements.forEach(input => {
