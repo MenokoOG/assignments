@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+}
+@font-face {
+	font-family: GrapeNuts;
+	src: url(./Grape_Nuts/GrapeNuts-Regular.ttf) format("opentype")
+}
+
+body {
+    display: grid;
+    justify-content: center;
+    background: linear-gradient(to right bottom, #3494E6, #EC6EAD);
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    font-family: GrapeNuts, Arial, Helvetica, sans-serif;
+   
+}
+
+form {
+    display: grid;
+    width: 500px;
+    border: 1px solid #3f88c5;
+    padding: 20px;
+    background: linear-gradient(to right bottom, #032b43, #136f63);
+    margin-top: 50px; /* Added margin to keep form in place */
+}
+
+h1 {
+    text-align: center;
+    color: #3f88c5;
+}
+
+input {
+    margin: 3px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.form-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 40px) 1fr;
+    grid-gap: 10px; /* Added gap for spacing */
+}
+
+button {
+    padding: 10px;
+    margin: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #3494E6; /* Green background color */
+    color: #efc10a; /* White text color */
+    border: none;
+}
+
+label {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    color: #efc10a;
+}
+
+.list-wrapper {
+    width: 500px;
+    color: #efc10a;
+    border: 1px solid black;
+    background: black;
+    margin-top: 20px; /* Added margin for spacing */
+}
+
+.item-wrapper {
+    position: relative;
+    margin: 10px;
+    border-bottom: 1px dashed #d00000;
+    background: black; /* Cornsilk background color */
+}
+
+h3 {
+    text-align: center;
+    color: #3f88c5;
+    font-size: larger;
+}
+
+.deleteX {
+    position: absolute;
+    margin: 0;
+    font-size: 20px;
+    right: 5px;
+    top: -10px;
+    color: red;
+    cursor: pointer;
+}
+
+.number {
+    position: absolute;
+    margin: 0;
+    font-size: 16px;
+    left: 5px;
+    top: -5px;
+    color: #3f88c5;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.complete-check {
+    cursor: pointer;
+}
+
+.todo-image {
+    height: 100px;
+    width: auto;
+}
