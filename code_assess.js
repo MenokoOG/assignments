@@ -1,7 +1,18 @@
-// Write a function that takes an array of numbers and returns a new array containing only the even numbers.
-const numbers = [1, 2, 3, 4, 5, 6];
-const filterEvenNumbers = numbers.filter( num => num % 2 === 0) 
-console.log(filterEvenNumbers)
+
+const people = [ "John", "Adam", "Amber" ]
+// Given the following code below, write a function that uses  .map()  to wrap each string/name in the array in an <h1> opening and closing tag
+const peopleElements = people.map(function(person){
+    return (`<h1> ${person} </h1>`)
+})
+    
+    
+
+
+console.log(peopleElements)
+
+
+
+// Expected Output: [ "<h1>John</h1>", "<h1>Adam</h1>", "<h1>Amber</h1>" ]
 
 
 
