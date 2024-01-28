@@ -1,0 +1,6 @@
+.my-foot{
+    display: flex;
+    justify-content: center;
+    color: darkorange;
+    background-color: bisque;
+}
