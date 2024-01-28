@@ -1,3 +1,5 @@
+my working file is on scrimba scrim, menoko og 1-28-24
+
 /*
 Challenge: Starting from scratch, build and render the 
 HTML for our section project. Check the Google slide for 
