@@ -1,6 +1,6 @@
-.image-el{
-  width: 60px;
 
+.image-el {
+  width: 60px;
 }
 .nav {
   display: flex;
@@ -10,7 +10,6 @@
 .nav-items {
   list-style: none;
   display: flex;
-
 }
 
 .nav-items > li {
