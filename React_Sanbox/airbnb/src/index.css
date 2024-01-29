@@ -16,7 +16,7 @@ body {
   }
   .div {
     background-color: #ffffff;
-    height: 853px;
+    /* height: 853px; */
     overflow: hidden;
     position: relative;
     width: 550px;
