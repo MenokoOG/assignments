@@ -1,7 +1,7 @@
 
 const people = [ "John", "Adam", "Amber" ]
 // Given the following code below, write a function that uses  .map()  to wrap each string/name in the array in an <h1> opening and closing tag
-const peopleElements = people.map(function(person){
+const peopleElements = people.map(function(person) =>{
     return (`<h1> ${person} </h1>`)
 })
     
