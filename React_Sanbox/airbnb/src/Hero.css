@@ -1,0 +1,16 @@
+.pic-group {
+    max-width: 400px;
+    align-self: center;
+}
+.hero {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero--header {
+    margin-bottom: 16px;
+}
+
+.hero--text {
+    margin-top: 0;
+}
