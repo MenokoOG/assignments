@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: bisque;
+}
+
+.joke-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.setup {
+  color: blue;
+ 
+  margin-bottom: 10px;
+}
+
+.punchline {
+  color: rgb(214, 67, 148);
+  margin-bottom: 20px;
+  border-bottom: 1px dashed darkmagenta;
+  padding: 9px;
+}
+
+
