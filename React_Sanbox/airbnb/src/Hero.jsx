@@ -1,5 +1,5 @@
 
-import pitGrid from "../images/Group 77.png";
+import pitGrid from "./images/Group 77.png";
 
 function Hero() {
   return (

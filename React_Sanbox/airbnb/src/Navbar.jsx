@@ -1,5 +1,5 @@
 
-import airImage from "../images/airbnb 1.png";
+import airImage from "./images/airbnb 1.png";
 
 function Navbar() {
   return (
