@@ -1,0 +1,58 @@
+/* style.css */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #518bb1, #2980b9);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  color: #ecf0f1; /* Complementary color for the title */
+}
+
+.vacation-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* style.css */
+/* ... existing styles ... */
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  text-align: center;
+}
+
+.spring {
+  background-color: #a3e4d7;
+}
+
+.summer {
+  background-color: #ffdd87;
+}
+
+.fall {
+  background-color: #ffa07a;
+}
+
+.winter {
+  background-color: #add8e6;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+}
+
