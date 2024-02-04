@@ -20,7 +20,7 @@ function combined(arr) {
     return result;
 }
 
-.
+
 const resultArray = combined(["this", "is", "an", "array"]);
 
 
