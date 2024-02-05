@@ -1,6 +1,5 @@
-import { useState } from "react";
-import starEmpty from "./assets/star-empty.png";
-import starFill from "./assets/star-filled.png";
+import React, { useState } from "react";
+import Star from "./Star"; // Import the Star component
 import user from "./assets/user.png";
 
 function App() {
@@ -11,18 +10,12 @@ function App() {
     email: "itsmyrealname@example.com",
     isFavorite: false,
   });
-  /**
-   * Challenge: Fill in the values in the markup
-   * using the properties of our state object above
-   * (Ignore `isFavorite` for now)
-   */
-  let starIcon = contact.isFavorite ? starFill : starEmpty;
 
   function toggleFavorite() {
-    setContact(prevContact => ({
-      ...prevContact, 
-      isFavorite: !prevContact.isFavorite
-    }))
+    setContact((prevContact) => ({
+      ...prevContact,
+      isFavorite: !prevContact.isFavorite,
+    }));
   }
 
   return (
@@ -30,11 +23,8 @@ function App() {
       <article className="card">
         <img src={user} className="card--image" />
         <div className="card--info">
-          <img
-            src={`${starIcon}`}
-            className="card--favorite"
-            onClick={toggleFavorite}
-          />
+          {/* Render the Star component and pass isFavorite as isFilled prop */}
+          <Star isFilled={contact.isFavorite} toggleFavorite={toggleFavorite} />
           <h2 className="card--name">
             {contact.firstName} {contact.lastName}
           </h2>
