@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import starEmpty from "./assets/star-empty.png";
+import starFill from "./assets/star-filled.png";
+import user from "./assets/user.png";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [contact, setContact] = useState({
+    firstName: "Menoko",
+    lastName: "OG",
+    phone: "+1 (111) 867-5309",
+    email: "itsmyrealname@example.com",
+    isFavorite: false,
+  });
+  /**
+   * Challenge: Fill in the values in the markup
+   * using the properties of our state object above
+   * (Ignore `isFavorite` for now)
+   */
+  let starIcon = contact.isFavorite ? starFill : starEmpty;
+
+  function toggleFavorite() {
+    setContact(prevContact => ({
+      ...prevContact, 
+      isFavorite: !prevContact.isFavorite
+    }))
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <main>
+      <article className="card">
+        <img src={user} className="card--image" />
+        <div className="card--info">
+          <img
+            src={`${starIcon}`}
+            className="card--favorite"
+            onClick={toggleFavorite}
+          />
+          <h2 className="card--name">
+            {contact.firstName} {contact.lastName}
+          </h2>
+          <p className="card--contact">{contact.phone}</p>
+          <p className="card--contact">{contact.email}</p>
+        </div>
+      </article>
+    </main>
+  );
 }
 
-export default App
+export default App;
