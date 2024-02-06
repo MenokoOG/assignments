@@ -10,7 +10,7 @@
 
 function solution(a) {
     const nonNegativeValues = a.filter(val => val !== -1)
-    const sortedNonNegativeValues = nonNegativeValues.slice().sort((a, b) => a - b)
+    const sortedNonNegativeValues = nonNegativeValues.
 
     // Use map to create a new array with sorted values and original -1 positions
     const resultArray = a.map(val => (val === -1 ? -1 : sortedNonNegativeValues.shift()))
@@ -52,7 +52,7 @@ console.log(countVowels(input1)) // Output: 3
 const input2 = 'Counting Vowels'
 console.log(countVowels(input2)) // Output: 5
 
-console.log("**************************************")
+
 
 
 
