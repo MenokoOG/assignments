@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  background-color: darkslategrey;
+}
+
+.setup-el{
+  color: chocolate;
+}
+
+.punch-el{
+  color: deeppink;
+}
+
+.button{
+  height: 50px;
+  width: 150px;
+  background-color: rgb(128, 128, 143);
+  color: rgb(33, 206, 42);
+  border-radius: 7px;
+  padding: 5px;
+}
