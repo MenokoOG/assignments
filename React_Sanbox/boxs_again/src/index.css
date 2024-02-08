@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  background-color: blanchedalmond;
+  background-color: rgb(142, 179, 196);
 }
 
 * {
@@ -8,10 +8,10 @@
 }
 
 .box {
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   border: 1px solid black;
   display: inline-block;
   margin-right: 4px;
-  border-radius: 5px;
+  border-radius: 7px;
 }

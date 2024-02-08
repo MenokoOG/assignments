@@ -1,8 +1,15 @@
-import React from "react";
+import React from "react"
 
-function Box(){
+function Box(props){
+    
+    const styles = {
+        backgroundColor: props.on ? "brown" : "transparent"
+    }
+
+    
+    
     return (
-
+        <div className='box' style={styles} onClick={() => props.toggle(props.id)}></div>
     )
 }
 
