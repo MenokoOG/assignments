@@ -28,4 +28,4 @@ function Navbar(props) {
 
 
 5. What data type is `props` when the component receives it?
-An object!
+An object! !!
