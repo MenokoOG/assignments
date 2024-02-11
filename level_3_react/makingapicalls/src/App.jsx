@@ -1,26 +1,29 @@
-import { useState } from 'react'
-
+import { useState } from "react";
+import { useEffect } from "react";
 
 function App() {
-  const [starWarsData, setStarWarsData] = useState({})
+  const [starWarsData, setStarWarsData] = useState({});
+  const [count, setCount] = useState(1);
 
-  // this causes render infinite :
+  console.log("Component rendered");
 
-  // fetch("https://swapi.dev/api/people/1")
-  //       .then(res => res.json())
-  //       .then(data => setStarWarsData(data))
+  // side effects
+  useEffect(() => {
+    console.log("Effect ran");
+    fetch(`https://swapi.dev/api/people/ ${count}`)
+      .then((res) => res.json())
+      .then((data) => setStarWarsData(data));
+  }, [count]);
 
-  console.log("Component rendered")
-
-
-  fetch("https://swapi.dev/api/people/1")
-        .then(res => res.json())
-        .then(data => console.log(data))
-    return (
-        <div>
-            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
-        </div>
-  )
+  return (
+    <div>
+      <h2>The count is {count}</h2>
+      <button onClick={() => setCount((prevCount) => prevCount + 1)}>
+        Get Next Character
+      </button>
+      <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+    </div>
+  );
 }
 
-export default App
+export default App;
