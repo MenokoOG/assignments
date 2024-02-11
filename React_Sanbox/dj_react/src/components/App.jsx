@@ -5,7 +5,8 @@ import '../index.css';
 const App = () => {
   return (
     <div className="app">
-      <h1>DJ Color Board</h1>
+      <div><h1>DJ Color Board</h1></div>
+      
       <ColorBoard />
     </div>
   );
