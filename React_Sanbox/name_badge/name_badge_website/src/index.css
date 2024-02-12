@@ -1,25 +1,36 @@
 /* App.css */
 .container {
-  background: linear-gradient(to bottom right, #c4b4b0, #533d2d);
+  background: linear-gradient(to bottom right, #c4b4b0, #F5BD71);
   min-height: 100vh;
   display: flex;
+  flex-direction: column; /* Adjust the main axis to vertical */
   justify-content: center;
   align-items: center;
+  padding: 20px; /* Add some padding to ensure content does not touch the edges */
 }
 
 .form {
-  background: goldenrod;
+  background: #101D13;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Ensure there's space between the form and the badges */
+  width: 100%; /* Make the form full width within its container */
+  max-width: 500px; /* Set a max-width for the form to avoid it being too wide */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the form elements */
+}
+
+.input, .button {
+  width: 90%; /* Adjust width to ensure it doesn't go past the form area */
+  margin-bottom: 15px; /* Maintain spacing between inputs */
+  padding: 10px;
+  border-radius: 4px;
 }
 
 .input {
-  width: 100%;
-  margin-bottom: 15px;
-  padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
   background-color: blanchedalmond;
 }
 
@@ -28,22 +39,25 @@
   color: white;
   padding: 12px 20px;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
+  display: block; /* Make the button block level to consume full width */
 }
 
 .badges {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column; /* Stack badges vertically */
+  align-items: center; /* Center badges horizontally */
+  width: 100%; /* Make badges container full width */
 }
 
 .badge {
   background-color: #e7ff5f;
   color: white;
   padding: 10px;
-  margin-top: 10px;
+  margin: 10px 0; /* Add margin to space out individual badges */
   border-radius: 4px;
+  width: 90%; /* Set badge width to fit within the container */
+  text-align: center; /* Center the text within each badge */
 }
 
 .badge.red {

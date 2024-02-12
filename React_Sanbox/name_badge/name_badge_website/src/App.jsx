@@ -40,7 +40,9 @@ const App = () => {
   };
 
   return (
+    
     <div className="container">
+      <h1>Menoko OG Name Badge Generator</h1>
       <form className="form" onSubmit={handleSubmit}>
         <input
           className="input"

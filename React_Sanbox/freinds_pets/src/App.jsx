@@ -8,6 +8,7 @@ const Pet = ({ name, breed }) => (
   <div className="pet">
     <p>Pet Name: {name}</p>
     <p>Breed: {breed}</p>
+    
   </div>
 );
 
