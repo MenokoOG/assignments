@@ -1,19 +1,31 @@
-import { useState } from "react";
-import memesData from "../memesData.js";
+import { useState, useEffect } from "react";
 
 function Meme() {
-  // 1. Set up the text inputs to save to the `topText` and `bottomText` state variables.
   const [meme, setMeme] = useState({
     topText: "",
     bottomText: "",
-    randomImage: "http://i.imgflip.com/1bij.jpg" 
+    randomImage: "http://i.imgflip.com/1bij.jpg"
   });
-  const [allMemeImages, setAllMemeImages] = useState(memesData);
+  const [allMemes, setAllMemes] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes")
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          setAllMemes(data.data.memes);
+        } else {
+          console.error("Failed to fetch memes data");
+        }
+      })
+      .catch(error => {
+        console.error("Error fetching memes data:", error);
+      });
+  }, []); // Empty dependency array ensures this effect runs only once on component mount
 
   function getMemeImage() {
-    const memesArray = allMemeImages.data.memes;
-    const randomNumber = Math.floor(Math.random() * memesArray.length);
-    const url = memesArray[randomNumber].url;
+    const randomNumber = Math.floor(Math.random() * allMemes.length);
+    const url = allMemes[randomNumber].url;
     setMeme(prevMeme => ({
       ...prevMeme,
       randomImage: url
@@ -23,22 +35,19 @@ function Meme() {
   return (
     <main>
       <div className="form">
-        {/* Text inputs for top and bottom text */}
-        <input 
+        <input
           type="text"
           placeholder="Top text"
           className="form--input"
-          // Update topText state when input changes
           onChange={(e) => setMeme(prevMeme => ({ ...prevMeme, topText: e.target.value }))}
         />
-        <input 
+        <input
           type="text"
           placeholder="Bottom text"
           className="form--input"
-          // Update bottomText state when input changes
           onChange={(e) => setMeme(prevMeme => ({ ...prevMeme, bottomText: e.target.value }))}
         />
-        <button 
+        <button
           className="form--button"
           onClick={getMemeImage}
         >
@@ -46,9 +55,7 @@ function Meme() {
         </button>
       </div>
       <div className="meme">
-        {/* Use state variables for top and bottom text */}
-        <img src={meme.randomImage} className="meme--image" />
-        {/* Replace hard-coded text with state variables */}
+        <img src={meme.randomImage} alt="Meme" className="meme--image" />
         <h2 className="meme--text top">{meme.topText}</h2>
         <h2 className="meme--text bottom">{meme.bottomText}</h2>
       </div>
