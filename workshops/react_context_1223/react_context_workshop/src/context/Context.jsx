@@ -2,7 +2,7 @@ import React, { useState } from "react";
 const Context = React.createContext();
 
 function ContextProvider(props) {
-  const [username, setUsername] = useState("vschooler123");
+  const [username, setUsername] = useState("Menoko OG");
 
   const [darkMode, setDarkMode] = useState(true);
 
