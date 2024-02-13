@@ -1,0 +1,43 @@
+
+:root{
+    --primary-color: gray;
+    --secondary-color: rgb(20, 20, 20, 0.7);
+    --text-color: wheat;
+}
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#the-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 20vh;
+    width: 100vw;
+    /* border: 2px solid green; */
+    margin-bottom: 20px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+#the-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* border: 2px solid blue; */
+    width: 100vw;
+    height: 80vh;
+    background-color: var(--primary-color);
+}
+.columns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 25vw;
+    background-color: var(--secondary-color);
+    color: var(--text-color)
+}
