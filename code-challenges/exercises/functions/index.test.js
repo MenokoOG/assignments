@@ -40,7 +40,7 @@ describe("Functions Exercise", () => {
     })
 
     // Remove the 'x' to have the test run
-    xdescribe("printFibonacciNum function", () => {
+    describe("printFibonacciNum function", () => {
         test("it returns the sum of the first 'n' fibonacci numbers", () => {
             // The first 5 fibonacci numbers are 1, 1, 2, 3, 5
             // Added together the final is 12
@@ -50,7 +50,7 @@ describe("Functions Exercise", () => {
     })
 
     // Remove the 'x' to have the test run
-    xdescribe("mostFrequentLetter function", () => {
+    describe("mostFrequentLetter function", () => {
         test("returns the character that occurs the most in the string", () => {
             expect(mostFrequentLetter("whatever")).toBe("e")
             expect(mostFrequentLetter("what is your quest?")).toBe(" ")
