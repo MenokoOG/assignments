@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const baseUrl = "https://api.vschool.io/ben-turner"
+const baseUrl = "https://api.vschool.io/lawrence-jefferson"
 
 
 export const getAllItems = () => axios.get(baseUrl + '/todo').then(res => res.data);
