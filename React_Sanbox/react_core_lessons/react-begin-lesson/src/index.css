@@ -1,3 +1,39 @@
-.avatar {
-    border-radius: 50px;
-}
+/* index.css */
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Light grey background */
+    color: #333; /* Dark grey text */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container styles */
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* White background */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+  
+  /* Heading styles */
+  .hello {
+    color: #007bff; /* Blue heading */
+  }
+  
+  /* Paragraph styles */
+  p {
+    color: #666; /* Medium grey text */
+  }
+  
+  /* Subheading styles */
+  h2 {
+    color: #333; /* Dark grey text */
+    margin-top: 20px;
+  }
+  
+  /* Apply more styles as needed for your components */
+  
