@@ -1,0 +1,126 @@
+/* index.css */
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #689ccf; /* Light gray background */
+  color: #e9e0e0; /* Dark gray text */
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container styles */
+.App {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  padding: 20px; /* Padding for the main container */
+}
+
+/* Header styles */
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center; /* Center the heading */
+  color: whitesmoke; /* Blue color for the heading */
+}
+
+.GradientGenerator {
+  max-width: 400px; /* Maximum width for better readability */
+  width: 100%;
+  padding: 20px; /* Padding for the gradient generator container */
+  background-color: #706b6b; /* White background */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+/* Color input styles */
+.ColorInput {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.ColorInput input[type="color"] {
+  margin-right: 10px;
+}
+
+.ColorInput button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #007bff; /* Blue button */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ColorInput button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Angle input styles */
+.AngleInput {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: #f8f9fa;
+  font-size: large;
+}
+
+.AngleInput label {
+  margin-right: 10px;
+}
+
+.AngleInput input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc; /* Light gray border */
+}
+
+/* Preview box styles */
+.PreviewBox {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+/* CSS code output styles */
+.CssCodeOutput textarea {
+  width: 85%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc; /* Light gray border */
+  resize: none;
+  overflow: auto; /* Limit overflow with scrollbars */
+}
+
+.CssCodeOutput button {
+  padding: 5px 10px;
+  background-color: #28a745; /* Green button */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.CssCodeOutput button:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+/* Responsive Design */
+@media screen and (min-width: 600px) {
+  .App {
+    padding: 40px; /* Increase padding on larger screens */
+  }
+}
