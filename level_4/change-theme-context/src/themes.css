@@ -1,0 +1,55 @@
+/* themes.css */
+
+/* Light Theme */
+.theme-wrapper.light {
+  background-color: #f5f5f5;
+  color: #333333;
+}
+
+.theme-wrapper.light .navbar {
+  background-color: #4285f4; /* Blue */
+}
+
+.theme-wrapper.light .navbar ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.theme-wrapper.light .navbar ul li {
+  list-style: none;
+}
+
+.theme-wrapper.light .main {
+  background-color: #ffffff; /* White */
+}
+
+.theme-wrapper.light .footer {
+  background-color: #e0e0e0; /* Gray */
+}
+
+/* Dark Theme */
+.theme-wrapper.dark {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.theme-wrapper.dark .navbar {
+  background-color: #4caf50; /* Green */
+}
+
+.theme-wrapper.dark .navbar ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.theme-wrapper.dark .navbar ul li {
+  list-style: none;
+}
+
+.theme-wrapper.dark .main {
+  background-color: #1a1a1a; /* Dark Gray */
+}
+
+.theme-wrapper.dark .footer {
+  background-color: #555555; /* Gray */
+}
