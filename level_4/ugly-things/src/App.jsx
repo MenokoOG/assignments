@@ -1,33 +1,70 @@
-import { useState } from 'react'
+import React, { useState, useContext } from 'react'; // Add useContext to the import statement
+import { UglyThingsContext } from './contexts/UglyThingsContext';
 
+const App = () => {
+  const { uglyThings, addUglyThing, deleteUglyThing, editUglyThing, error } = useContext(UglyThingsContext);
+  const [imageUrl, setImageUrl] = useState('');
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [editIndex, setEditIndex] = useState(null);
+  const [editTitle, setEditTitle] = useState('');
+  const [editDescription, setEditDescription] = useState('');
 
-function App() {
-  const [count, setCount] = useState(0)
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!imageUrl || !title || !description) return;
+    addUglyThing({ title, description, imgUrl: imageUrl });
+    setImageUrl('');
+    setTitle('');
+    setDescription('');
+  };
+
+  const handleSubmitEdit = (index) => {
+    if (!editTitle || !editDescription) return;
+    editUglyThing(index, { title: editTitle, description: editDescription, imgUrl: uglyThings[index].imgUrl });
+    setEditIndex(null);
+    setEditTitle('');
+    setEditDescription('');
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div>
+      <h1>Ugly Things</h1>
+      <form onSubmit={handleSubmit}>
+        <input type="text" placeholder="Image URL" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} />
+        <input type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
+        <input type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
+        <button type="submit">Submit</button>
+      </form>
+      {error && <p>Error: {error}</p>}
+      <ul className="ugly-things-list">
+        {uglyThings.map((uglyThing, index) => (
+          <li key={index}>
+            <div className="ugly-thing">
+              <img src={uglyThing.imgUrl} alt={uglyThing.title} className="ugly-thing-image" />
+              {editIndex === index ? (
+                <div className="edit-form">
+                  <input type="text" placeholder="Title" value={editTitle} onChange={(e) => setEditTitle(e.target.value)} />
+                  <input type="text" placeholder="Description" value={editDescription} onChange={(e) => setEditDescription(e.target.value)} />
+                  <button onClick={() => handleSubmitEdit(index)}>Submit</button>
+                  <button onClick={() => setEditIndex(null)}>Cancel</button>
+                </div>
+              ) : (
+                <div className="ugly-thing-details">
+                  <h2>{uglyThing.title}</h2>
+                  <p>{uglyThing.description}</p>
+                  <div className="ugly-thing-buttons">
+                    <button onClick={() => deleteUglyThing(index)}>Delete</button>
+                    <button onClick={() => setEditIndex(index)}>Edit</button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
-export default App
+export default App;
