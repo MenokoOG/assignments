@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Main = () => {
-  return <main className="main">Welcome to My Theme App!</main>;
+  return <main className="main"><h1>Welcome to Menoko OG  Theme App!</h1></main>;
 };
 
 export default Main;

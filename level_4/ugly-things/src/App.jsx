@@ -29,8 +29,8 @@ const App = () => {
 
   return (
     <div>
-      <h1>Ugly Things</h1>
-      <form onSubmit={handleSubmit}>
+      <h1> Menoko Og Ugly Things</h1>
+      <form onSubmit={handleSubmit} className='form'>
         <input type="text" placeholder="Image URL" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} />
         <input type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
         <input type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
