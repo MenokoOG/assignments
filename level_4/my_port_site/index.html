@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menoko OG Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Lawrence Jefferson II</h1>
+      <p class="tagline">Offering web development services to make your projects shine.</p>
+      <a href="#contact" class="contact-btn">CONTACT NOW</a>
+    </div>
+  </header>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project">
+        <img src="project1.jpg" alt="Project 1">
+        <h3>Project Title</h3>
+        <p>Description – 2-3 sentences</p>
+        <p>Developed an app that allows users to x, y, and z. Collaborated with a team of 3 people to develop an app that allows users to x, y, and z. Engineered the x, y, and z.</p>
+        <p>Technologies: HTML, CSS, JavaScript</p>
+        <div class="project-links">
+          <a href="#" class="live-link">VIEW LIVE</a>
+          <a href="#" class="code-link">VIEW CODE</a>
+        </div>
+      </div>
+      <!-- Add more projects as needed -->
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>About</h2>
+      <p>2-3 sentences about yourself (excerpt from your LinkedIn About Summary).</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <form id="contact-form" action="send_email.php" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <div class="external-links">
+        <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a>
+        <a href="https://github.com/your-github-profile" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
