@@ -14,23 +14,7 @@ Before you begin, ensure you have the following installed:
 - Node.js (v12.0.0 or later)
 - npm (comes with Node.js)
 
-### Installation
 
-1. **Clone the repository:**
-   ```sh
-   git clone https://your-repository-url/archive-explorer.git
-   cd archive-explorer
-   ```
-
-2. **Install dependencies:**
-   ```sh
-   npm install
-   ```
-
-3. **Start the development server:**
-   ```sh
-   npm run dev
-   ```
 
 ## Application Structure
 

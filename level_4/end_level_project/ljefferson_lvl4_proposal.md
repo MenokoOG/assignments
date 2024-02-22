@@ -78,4 +78,4 @@ App
 └── AboutPage
 ```
 
-This document outlines the core components of the Archive Explorer project, from the initial concept and user interaction to the technical structure and design layout. By following this documentation, developers and stakeholders can have a clear understanding of the project's scope and requirements.
+This document outlines the core components of the Archive Explorer project, from the initial concept and user interaction to the technical structure and design layout. 
