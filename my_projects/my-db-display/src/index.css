@@ -1,0 +1,33 @@
+/* index.css */
+
+:root {
+  --primary-color: #007bff; /* Example primary color */
+  --secondary-color: #6c757d; /* Example secondary color */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.card h2 {
+  color: var(--primary-color);
+}
+
+.card p {
+  color: var(--secondary-color);
+}
