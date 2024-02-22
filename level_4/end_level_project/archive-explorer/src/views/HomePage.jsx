@@ -17,8 +17,11 @@ function HomePage() {
   };
 
   return (
-    <div>
-      <h1>Check Archive Status</h1>
+    <div >
+      <div className='intro'><h1>Menoko OG Archive Explorer</h1>
+      <h2>Check Archive Status</h2>
+      </div>
+      
       <form onSubmit={handleSubmit}>
         <input
           type="text"

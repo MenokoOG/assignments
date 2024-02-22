@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+
   <title>Menoko OG Portfolio</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -19,14 +21,14 @@
     <div class="container">
       <h2>Projects</h2>
       <div class="project">
-        <img src="project1.jpg" alt="Project 1">
-        <h3>Project Title</h3>
-        <p>Description – 2-3 sentences</p>
-        <p>Developed an app that allows users to x, y, and z. Collaborated with a team of 3 people to develop an app that allows users to x, y, and z. Engineered the x, y, and z.</p>
+        <img href="https://menokobaconipsum.netlify.app/"    src="./assets/Screenshot 2024-02-22 084043.png" alt="image of bacon ipsum generator">
+        <h3>Bacon Ipsum Generator</h3>
+        <p>Application to generator Lorem Ipsum content. User can input number of paragraphs that then sends a GET request to return parapraphs. The user can then copy the content to clipboard.</p>
+        <p>Developed an app that allows users to generate bacon based lorem ipsum content.</p>
         <p>Technologies: HTML, CSS, JavaScript</p>
         <div class="project-links">
-          <a href="#" class="live-link">VIEW LIVE</a>
-          <a href="#" class="code-link">VIEW CODE</a>
+          <a href="https://menokobaconipsum.netlify.app/" class="live-link">VIEW LIVE</a>
+          <a href="https://github.com/MenokoOG/bacon-ipsum-generator" class="code-link">VIEW CODE</a>
         </div>
       </div>
       <!-- Add more projects as needed -->
@@ -43,19 +45,20 @@
   <section id="contact">
     <div class="container">
       <h2>Contact</h2>
-      <form id="contact-form" action="send_email.php" method="post">
+      <form id="contact-form">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" placeholder="Your Message" required></textarea>
         <button type="submit">Send</button>
-      </form>
+    </form>
+    
       <div class="external-links">
-        <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a>
-        <a href="https://github.com/your-github-profile" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/lawrence-jefferson-ii-46497075" target="_blank">LinkedIn</a>
+        <a href="https://github.com/MenokoOG" target="_blank">GitHub</a>
       </div>
     </div>
   </section>
 
-  <script src="script.js"></script>
+  <script src="./scrips.js"></script>
 </body>
 </html>
