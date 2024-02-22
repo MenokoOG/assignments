@@ -18,7 +18,7 @@ function HomePage() {
 
   return (
     <div >
-      <div className='intro'><h1>Menoko OG Archive Explorer</h1>
+      <div className='intro'><h1>Menoko OG Website Archive Explorer</h1>
       <h2>Check Archive Status</h2>
       </div>
       
