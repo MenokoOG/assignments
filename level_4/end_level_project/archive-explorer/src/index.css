@@ -1,3 +1,7 @@
+#root{
+height: 100vh;
+}
+
 /* Light Theme *?
 
 /* General body styling */
@@ -10,6 +14,23 @@ body {
   display: flex;
   justify-content: center;
   transition: background-color 0.3s ease; /* Smooth transition for background color change */
+}
+
+.about-hold {
+  margin: 30px;
+  line-height: 1.4;
+}
+.about-hold > h1{
+text-align: center;
+}
+
+.result-hold {
+  margin: 30px;
+  line-height: 1.4;
+}
+
+.result-hold > h1 {
+  text-align: center;
 }
 
 /* Navigation styling */
@@ -84,6 +105,28 @@ button:hover {
   line-height: 1.2;
 }
 
+.search-tips{
+  margin: 40px;
+}
+
+.result {
+  text-align: center;
+}
+
+.result-box {
+  text-align: center;
+}
+
+.result-box > a {
+  color: brown;
+  font-size: large;
+}
+
+.about-para {
+  margin: 40px;
+  line-height: 1.4;
+}
+
 /* Dark Theme */
 .dark-theme body {
   background-color: #444; /* Dark gray background color for body */
@@ -124,4 +167,11 @@ button:hover {
   background-color: #555; /* Darker background color for instructions */
   color: #fff; /* Text color for instructions in dark theme */
 }
+
+.dark-theme ul {
+  color: #fff;
+}
+
+
+
 

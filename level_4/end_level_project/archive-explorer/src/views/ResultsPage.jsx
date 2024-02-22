@@ -5,10 +5,10 @@ function ResultsPage() {
   const { result } = useContext(ArchiveContext);
 
   return (
-    <div className="container">
-      <h1>Results</h1>
+    <div className="container" style={{height: "100vh", width:"100vw"}}>
+      <h1 className='result'>Results</h1>
       {result?.archived_snapshots?.closest ? (
-        <div>
+        <div className='result-box'>
           <p>Snapshot found!</p>
           <p>Status: {result.archived_snapshots.closest.status}</p>
           <p>Timestamp: {result.archived_snapshots.closest.timestamp}</p>
