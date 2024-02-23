@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: false }));
 // CORS configuration
 // CORS configuration
 app.use(cors({
-  origin: 'http://127.0.0.1:5173'
+  origin: 'http://127.0.0.1:5174'
 }));
 
 
