@@ -8,12 +8,12 @@ function HomePage() {
   const { checkArchive } = useContext(ArchiveContext);
   let navigate = useNavigate();
 
-  // Get current date in YYYY-MM-DD format
+  
   const currentDate = new Date().toISOString().split('T')[0];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Ensure timestamp is in YYYYMMDD format if needed
+    
     const formattedTimestamp = timestamp.replace(/-/g, '');
     await checkArchive(url, formattedTimestamp);
     navigate('/results');
