@@ -1,14 +1,14 @@
-// node module lesson, menoko og ,2-23-24
+//  module pattern lesson, menoko og ,2-23-24
 
-function sum(a, b) {
+function sum  (a, b) {
     return a + b
 }
 
-function subtract(a, b){
+ function subtract (a, b){
     return a-b
 }
 
 module.exports = {
-    sum: sum,
-    subtract: subtract
+    sum, 
+    subtract
 }
