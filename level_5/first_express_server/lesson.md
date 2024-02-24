@@ -8,3 +8,15 @@
 
 ## install Express
 * npm install express
+
+# Vocabulary
+
+## Route
+* like an event listener for http requests
+
+## Endpoint
+* "./item"  "./user" 
+
+## Port
+* localhost: 3000 - 9000
+* NOTE: react usually is on 3000
