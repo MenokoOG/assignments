@@ -1,5 +1,6 @@
 //server workshop
 // dependencies
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
@@ -10,7 +11,7 @@ app.use(express.json());
 mongoose.set("strictQuery", true);
 app.use(morgan("dev"));
 
-mongoose.connect("mongodb+srv://jefftkddan:9DJPjBFTr60sKysO@cluster0.x5ynsno.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", (err) => {
+mongoose.connect(process.env.DB_CONNECTION_STRING, (err) => {
   console.log("connected to database", err);
 });
 
