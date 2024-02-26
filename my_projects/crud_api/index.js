@@ -1,6 +1,6 @@
 require("dotenv").config();
 const express = require("express");
-const cors = require("cors");
+// const cors = require("cors");
 const mongoose = require("mongoose");
 const Product = require("./models/product.model.js");
 const productRoute = require("./routes/product.route.js");
@@ -12,9 +12,9 @@ app.use(express.urlencoded({ extended: false }));
 
 // CORS configuration
 // CORS configuration
-app.use(cors({
-  origin: 'http://127.0.0.1:5174'
-}));
+// app.use(cors({
+//   origin: 'http://127.0.0.1:5174'
+// }));
 
 
 // routes
