@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express();
+const morgan = require('morgan');
 
 //Middleware (for every request)- Looks for a request body, and turns it into 'req.body
 app.use("/", express.json());
+app.use(morgan('dev'))
 
 //Routes-middleware
 app.use("/movies", require("./routes/movieRouter"));

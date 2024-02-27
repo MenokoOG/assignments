@@ -38,8 +38,51 @@ app.post('/bounty', (req, res) => {
     bounties.push(newBounty)
 
     res.status(201).json(newBounty)
-    res.send(`Successfully added "${newBounty}" to the database.`)
 })
+
+// DELETE endpoint to remove a bounty by ID
+app.delete('/bounty/:id', (req, res) => {
+    const { id } = req.params;
+
+    // Find index of bounty with given ID
+    const index = bounties.findIndex(bounty => bounty.id === id);
+
+    // If bounty not found
+    if (index === -1) {
+        return res.status(404).json({ message: 'Bounty not found' });
+    }
+
+    // Remove bounty from array
+    bounties.splice(index, 1);
+
+    res.status(200).json({ message: 'Bounty deleted successfully' });
+});
+
+// PUT endpoint to update an existing bounty
+app.put('/bounty/:id', (req, res) => {
+    const { id } = req.params;
+    const { firstName, lastName, living, bountyAmount, type } = req.body;
+
+    // Find index of bounty with given ID
+    const index = bounties.findIndex(bounty => bounty.id === id);
+
+    // If bounty not found
+    if (index === -1) {
+        return res.status(404).json({ message: 'Bounty not found' });
+    }
+
+    // Update bounty fields
+    bounties[index] = {
+        id,
+        firstName,
+        lastName,
+        living,
+        bountyAmount,
+        type
+    };
+
+    res.status(200).json(bounties[index]);
+});
 
 // start server
 app.listen(PORT, () => {

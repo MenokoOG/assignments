@@ -1,5 +1,5 @@
 {
-  "name": "request_bodt_post_req",
+  "name": "picked_off",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -11,7 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2",
-    "uuid": "^9.0.1"
+    "express": "^4.18.2"
   }
 }
