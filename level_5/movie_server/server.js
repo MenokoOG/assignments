@@ -7,7 +7,7 @@ app.use("/", express.json());
 app.use(morgan('dev'))
 
 //Routes-middleware
-app.use("/movies", require("./routes/movieRouter"));
+app.use("/api/movies", require("./routes/movieRouter"));
 
 app.use("/tvshows", require("./routes/tvshowRouter"));
 
