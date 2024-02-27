@@ -35,6 +35,33 @@ movieRouter.post("/", (req, res) => {
   res.send(`Successfully added "${newMovie.title}" to the database`);
 });
 
+// Delete One
+movieRouter.delete("/:movieId", (req, res) => {
+  const movieId = req.params.movieId
+  const movieIndex = movies.findIndex(movie => movie._id === movieId)
+  movies.splice(movieIndex, 1)
+  res.send(`Successfully deleted movie!`)
+})
+
+// Update One
+movieRouter.put('/:movieId', (req, res) => {
+  const movieId = req.params.movieId; // Get the movie ID from the request parameters.
+  const updatedObject = req.body; // Get the updated movie data from the request body.
+
+  // Find the index of the movie to be updated in the 'movies' array.
+  const movieIndex = movies.findIndex(movie => movie._id === movieId);
+
+  if (movieIndex !== -1) {
+      // If the movie is found, update its data.
+      const updatedMovie = Object.assign(movies[movieIndex], updatedObject);
+      res.send(updatedMovie);
+  } else {
+      // If the movie is not found, send an error response.
+      res.status(404).send('Movie not found');
+  }
+});
+
+
 
 
 
