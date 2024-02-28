@@ -11,7 +11,8 @@ const movies = [
 
 // GET all
 movieRouter.get("/", (req, res) => {
-  res.send(movies);
+  
+  res.status(200).send(movies);
 });
 
 // GET one
@@ -20,9 +21,10 @@ movieRouter.get("/:movieId", (req, res, next) => {
   const foundMovie = movies.find((movie) => movie._id === movieId);
   if(!foundMovie){
     const error = new Error(`The item with id ${movieId}is not here dude!`)
+    res.status(500)
     return next(error)
   }
-  res.send(foundMovie);
+  res.status(200).send(foundMovie);
 });
 
 // GET by genre (Moved up for correct matching)
@@ -30,10 +32,11 @@ movieRouter.get("/search/genre", (req, res, next) => {
   const genre = req.query.genre;
   if(!genre){
     const error = new Error("You must provide a genre!")
+    res.status(500)
     return next(error)
   }
   const filteredMovies = movies.filter((movie) => movie.genre === genre);
-  res.send(filteredMovies);
+  res.status(200).send(filteredMovies);
 });
 
 // POST one
@@ -41,7 +44,7 @@ movieRouter.post("/", (req, res) => {
   const newMovie = req.body;
   newMovie._id = uuidv4();
   movies.push(newMovie);
-  res.send(newMovie);
+  res.status(201).send(newMovie);
 });
 
 // Delete One
@@ -61,7 +64,7 @@ movieRouter.put("/:movieId", (req, res) => {
 
   if (movieIndex !== -1) {
     const updatedMovie = Object.assign(movies[movieIndex], updatedObject);
-    res.send(updatedMovie);
+    res.status(201).send(updatedMovie);
   } else {
     res.status(404).send("Movie not found");
   }
