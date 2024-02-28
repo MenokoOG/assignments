@@ -15,15 +15,23 @@ movieRouter.get("/", (req, res) => {
 });
 
 // GET one
-movieRouter.get("/:movieId", (req, res) => {
+movieRouter.get("/:movieId", (req, res, next) => {
   const movieId = req.params.movieId;
   const foundMovie = movies.find((movie) => movie._id === movieId);
+  if(!foundMovie){
+    const error = new Error(`The item with id ${movieId}is not here dude!`)
+    return next(error)
+  }
   res.send(foundMovie);
 });
 
 // GET by genre (Moved up for correct matching)
-movieRouter.get("/search/genre", (req, res) => {
+movieRouter.get("/search/genre", (req, res, next) => {
   const genre = req.query.genre;
+  if(!genre){
+    const error = new Error("You must provide a genre!")
+    return next(error)
+  }
   const filteredMovies = movies.filter((movie) => movie.genre === genre);
   res.send(filteredMovies);
 });
