@@ -1,11 +1,13 @@
 const express = require('express');
 const uuid = require('uuid')
+const morgan = require('morgan');
 
 const app = express();
 const PORT = 3000;
 
 //middleware to parse json
 app.use(express.json());
+app.use(morgan('dev'))
 
 //array to store bounties
 let bounties = []
