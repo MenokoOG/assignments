@@ -11,12 +11,12 @@ app.use(express.json());
 let bounties = []
 
 //GET endpoint
-app.get('/bounty', (req, res) => {
+app.get('/api/bounty', (req, res) => {
     res.json(bounties)
 });
 
 // POST endpoint to add bounty
-app.post('/bounty', (req, res) => {
+app.post('/api/bounty', (req, res) => {
     const {firstName, lastName, living, bountyAmount, type} = req.body;
 
     // validate request body
@@ -41,7 +41,7 @@ app.post('/bounty', (req, res) => {
 })
 
 // DELETE endpoint to remove a bounty by ID
-app.delete('/bounty/:id', (req, res) => {
+app.delete('/api/bounty/:id', (req, res) => {
     const { id } = req.params;
 
     // Find index of bounty with given ID
@@ -59,7 +59,7 @@ app.delete('/bounty/:id', (req, res) => {
 });
 
 // PUT endpoint to update an existing bounty
-app.put('/bounty/:id', (req, res) => {
+app.put('/api/bounty/:id', (req, res) => {
     const { id } = req.params;
     const { firstName, lastName, living, bountyAmount, type } = req.body;
 
