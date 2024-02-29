@@ -43,6 +43,7 @@ const CreateBounty = () => {
               type="text"
               name="firstName"
               value={formData.firstName}
+              placeholder='Fist Name'
               onChange={handleChange}
               required
             />
@@ -53,6 +54,7 @@ const CreateBounty = () => {
               type="text"
               name="lastName"
               value={formData.lastName}
+              placeholder='Last Name'
               onChange={handleChange}
               required
             />
@@ -64,6 +66,7 @@ const CreateBounty = () => {
               name="living"
               value={formData.living}
               onChange={handleChange}
+              placeholder='Yes or No'
               required
             />
           </div>
@@ -73,6 +76,7 @@ const CreateBounty = () => {
               type="number"
               name="bountyAmount"
               value={formData.bountyAmount}
+              placeholder='0.00'
               onChange={handleChange}
               required
             />
@@ -83,6 +87,7 @@ const CreateBounty = () => {
               type="text"
               name="type"
               value={formData.type}
+              placeholder='Jedi or Sith'
               onChange={handleChange}
               required
             />

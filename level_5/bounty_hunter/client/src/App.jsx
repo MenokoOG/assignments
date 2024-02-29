@@ -7,7 +7,8 @@ import './index.css';
 function App() {
   return (
     <div className="container">
-      <h1>Bounty Management System</h1>
+      <h1>Menoko OG</h1>
+      <h1> Bounty Management System</h1>
       <CreateBounty />
       <ReadBounties />
     </div>
