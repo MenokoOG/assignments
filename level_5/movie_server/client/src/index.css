@@ -121,3 +121,11 @@ form {
   max-width: 300px;
   margin: auto;
 }
+
+.filter-form {
+  width: 200px;
+  padding: 5px;
+  margin: 10px;
+  background-color: cornflowerblue;
+  color: #f2f2f2;
+}

@@ -29,16 +29,15 @@ movieRouter.get("/", (req, res, next) => {
 // });
 
 // GET by genre (Moved up for correct matching)
-// movieRouter.get("/search/genre", (req, res, next) => {
-//   const genre = req.query.genre;
-//   if(!genre){
-//     const error = new Error("You must provide a genre!")
-//     res.status(500)
-//     return next(error)
-//   }
-//   const filteredMovies = movies.filter((movie) => movie.genre === genre);
-//   res.status(200).send(filteredMovies);
-// });
+movieRouter.get("/search/genre", (req, res, next) => {
+  Movie.find({genre: req.query.genre}, (err, movies) => {
+    if(err) {
+      res.status(500)
+      return next(err)
+    }
+    return res.status(200).send(movies)
+  })
+});
 
 // POST one
 movieRouter.post("/", (req, res, next) => {
