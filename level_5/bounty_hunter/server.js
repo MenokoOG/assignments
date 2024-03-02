@@ -1,92 +1,31 @@
+require("dotenv").config();
 const express = require('express');
-const uuid = require('uuid')
+const mongoose = require('mongoose');
 const morgan = require('morgan');
+const bountyRoutes = require('./routes/bountyRoutes');
 
 const app = express();
 const PORT = 3000;
 
-//middleware to parse json
 app.use(express.json());
-app.use(morgan('dev'))
+mongoose.set("strictQuery", true);
+app.use(morgan('dev'));
 
-//array to store bounties
-let bounties = []
+mongoose.connect(process.env.DB_CONNECTION_STRING, (err) => {
+    console.log("connected to database", err);
+  });
 
-//GET endpoint
-app.get('/api/bounty', (req, res) => {
-    res.json(bounties)
-});
 
-// POST endpoint to add bounty
-app.post('/api/bounty', (req, res) => {
-    const {firstName, lastName, living, bountyAmount, type} = req.body;
 
-    // validate request body
-    if (!firstName || !lastName || !living || !bountyAmount || !type) {
-        return res.status(400).json({message: 'Please provide all required fields.'});
-    }
+app.use('/api/bounty', bountyRoutes);
 
-    // create new bounty object
-    const newBounty = {
-        id: uuid.v4(),
-        firstName,
-        lastName,
-        living,
-        bountyAmount,
-        type
-    }
+//error handler
+app.use((err, req, res, next) => {
+    console.log(err);
+    return res.send({ errMsg: err.message });
+  });
+  
 
-    // add new bounty to array
-    bounties.push(newBounty)
-
-    res.status(201).json(newBounty)
-})
-
-// DELETE endpoint to remove a bounty by ID
-app.delete('/api/bounty/:id', (req, res) => {
-    const { id } = req.params;
-
-    // Find index of bounty with given ID
-    const index = bounties.findIndex(bounty => bounty.id === id);
-
-    // If bounty not found
-    if (index === -1) {
-        return res.status(404).json({ message: 'Bounty not found' });
-    }
-
-    // Remove bounty from array
-    bounties.splice(index, 1);
-
-    res.status(200).json({ message: 'Bounty deleted successfully' });
-});
-
-// PUT endpoint to update an existing bounty
-app.put('/api/bounty/:id', (req, res) => {
-    const { id } = req.params;
-    const { firstName, lastName, living, bountyAmount, type } = req.body;
-
-    // Find index of bounty with given ID
-    const index = bounties.findIndex(bounty => bounty.id === id);
-
-    // If bounty not found
-    if (index === -1) {
-        return res.status(404).json({ message: 'Bounty not found' });
-    }
-
-    // Update bounty fields
-    bounties[index] = {
-        id,
-        firstName,
-        lastName,
-        living,
-        bountyAmount,
-        type
-    };
-
-    res.status(200).json(bounties[index]);
-});
-
-// start server
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`)
-})
+    console.log(`Server is running on http://localhost:${PORT}`);
+});

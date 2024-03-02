@@ -1,4 +1,3 @@
-// src/components/CreateBounty.js
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -43,7 +42,7 @@ const CreateBounty = () => {
               type="text"
               name="firstName"
               value={formData.firstName}
-              placeholder='Fist Name'
+              placeholder='First Name'
               onChange={handleChange}
               required
             />
@@ -65,8 +64,8 @@ const CreateBounty = () => {
               type="text"
               name="living"
               value={formData.living}
-              onChange={handleChange}
               placeholder='Yes or No'
+              onChange={handleChange}
               required
             />
           </div>

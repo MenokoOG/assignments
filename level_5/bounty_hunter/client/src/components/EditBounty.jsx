@@ -1,4 +1,3 @@
-// src/components/EditBounty.js
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -6,7 +5,7 @@ const EditBounty = ({ bounty, onUpdate }) => {
   const [formData, setFormData] = useState({
     firstName: bounty.firstName,
     lastName: bounty.lastName,
-    living: bounty.living,
+    living: bounty.living.toString(),
     bountyAmount: bounty.bountyAmount,
     type: bounty.type
   });
@@ -18,7 +17,7 @@ const EditBounty = ({ bounty, onUpdate }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.put(`/api/bounty/${bounty.id}`, formData);
+      const res = await axios.put(`/api/bounty/${bounty._id}`, formData);
       onUpdate(res.data);
     } catch (error) {
       console.error('Error updating bounty:', error);
