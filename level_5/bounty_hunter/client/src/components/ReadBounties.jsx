@@ -1,28 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import axios from 'axios';
 import EditBounty from './EditBounty';
 
-const ReadBounties = () => {
-  const [bounties, setBounties] = useState([]);
-  const [editBountyId, setEditBountyId] = useState(null);
-
-  useEffect(() => {
-    const fetchBounties = async () => {
-      try {
-        const res = await axios.get('/api/bounty');
-        setBounties(res.data);
-      } catch (error) {
-        console.error('Error fetching bounties:', error);
-      }
-    };
-
-    fetchBounties();
-  }, []);
+const ReadBounties = ({ bounties, onBountiesChange }) => {
+  const [editBountyId, setEditBountyId] = React.useState(null);
 
   const handleDelete = async (id) => {
     try {
       await axios.delete(`/api/bounty/${id}`);
-      setBounties(bounties.filter(bounty => bounty.id !== id));
+      onBountiesChange(); // Refresh bounties list after deleting a bounty
     } catch (error) {
       console.error('Error deleting bounty:', error);
     }
@@ -33,10 +19,8 @@ const ReadBounties = () => {
   };
 
   const handleUpdate = (updatedBounty) => {
-    setBounties(bounties.map(bounty =>
-      bounty.id === updatedBounty.id ? updatedBounty : bounty
-    ));
-    setEditBountyId(null);
+    onBountiesChange(); // Refresh bounties list after updating a bounty
+    setEditBountyId(null); // Reset edit state
   };
 
   return (

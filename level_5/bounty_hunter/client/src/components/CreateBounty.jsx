@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const CreateBounty = () => {
+const CreateBounty = ({ onBountyCreated }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -17,8 +17,7 @@ const CreateBounty = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/bounty', formData);
-      console.log('New bounty created:', res.data);
+      await axios.post('/api/bounty', formData);
       setFormData({
         firstName: '',
         lastName: '',
@@ -26,6 +25,7 @@ const CreateBounty = () => {
         bountyAmount: '',
         type: ''
       });
+      onBountyCreated();
     } catch (error) {
       console.error('Error creating bounty:', error);
     }
