@@ -61,6 +61,7 @@ h4 {
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  border-radius: 40%;
 }
 
 .btn:hover {
@@ -73,6 +74,7 @@ h4 {
   background-color: #c53030; /* Softened red for danger actions */
   margin: 5px;
   color: #efb73f;
+  border-radius: 50%;
 }
 
 .btn-danger:hover {
@@ -84,6 +86,7 @@ h4 {
   margin-left: 10px;
   background-color: #607746; 
   color: #ebe1c1;/* Updated secondary button color */
+  border-radius: 50%;
 }
 
 .btn-secondary:hover {
@@ -91,13 +94,17 @@ h4 {
   color: #607746;/* Darker shade on hover */
 }
 .card {
+  
+  text-align: justify;
+  align-items: center;
   background-color: #e8debe;
   color: #607746;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin: 15px;
-  text-align: center;
+  border-radius: 12%;
+  
 }
 .card > ul > li {
   background-color: #b1c49e;
@@ -107,4 +114,6 @@ h4 {
   margin: 15px;
   color: #333333;
   font-weight: 700;
+  list-style-type: none;
+  
 }
