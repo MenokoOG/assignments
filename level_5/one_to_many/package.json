@@ -9,5 +9,12 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "experss": "^0.0.1-security",
+    "express": "^4.18.3",
+    "mongoose": "6.12",
+    "morgan": "^1.10.0"
+  }
 }
