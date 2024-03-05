@@ -25,6 +25,7 @@ function extractUniqueCharacters(strings) {
 }
 
 const uniqueChars = extractUniqueCharacters(words);
+console.log(uniqueChars)
 console.log(`The unique characters are: ${uniqueChars}`); // Output: ['a', 'p', 'l', 'e', 'b', 'n', 'c', 'h', 'r', 'y']
 console.log("****************************************************************");
 const people = [
