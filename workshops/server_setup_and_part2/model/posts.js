@@ -15,5 +15,12 @@ const postSchema = new Schema ({
         default: Date.now
     }
 })
+postSchema.virtual('formattedDate').get(function() {
+    const date = new Date(this.datePosted)
+    const day = date.getDate()
+    const month = date.toLocaleString('default', { month: 'long' })
+    const year = date.getFullYear()
+    return `${day} ${month} ${year}`
+})
 
 module.exports = mongoose.model("Post", postSchema)

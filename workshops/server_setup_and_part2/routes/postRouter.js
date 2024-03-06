@@ -18,15 +18,20 @@ postRouter.post("/", (req, res, next) => {
 // get all
 postRouter.get("/", (req, res, next) => {
     Post.find((err, posts) => {
-        if(err) {
+        if (err) {
             res.status(500)
             return next(err)
         }
-        if(!posts) {
+        if (!posts || posts.length === 0) {
             res.status(404)
             return next(new Error("No posts are found in collection!"))
         }
-        return res.status(200).send(posts)
+        // Map through posts to add formattedDate property
+        const postsWithFormattedDate = posts.map(post => ({
+            ...post.toJSON(),
+            formattedDate: post.formattedDate
+        }))
+        return res.status(200).send(postsWithFormattedDate)
     })
 })
 

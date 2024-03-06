@@ -19,6 +19,7 @@ function App() {
       <div>
         <h1>{post.title}</h1>
         <p>{post.description}</p>
+        <p>{post.formattedDate}</p>
       </div>
     )
   })
