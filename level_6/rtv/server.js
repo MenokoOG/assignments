@@ -1,4 +1,3 @@
-//server workshop
 // dependencies
 require("dotenv").config();
 const express = require("express");
@@ -16,9 +15,9 @@ mongoose.connect(process.env.DB_CONNECTION_STRING, (err) => {
 });
 
 // routes
-app.use("/api/posts", require("./routes/postRouter"))
+app.use("/api/", require("./"))
 
-app.use("/", require("./routes/postRouter"))
+app.use("/", require("./"))
 
 //error handler
 app.use((err, req, res, next) => {
@@ -28,7 +27,7 @@ app.use((err, req, res, next) => {
 
 
 // server start
-const PORT = 7500 
-app.listen(7500, () => {
-  console.log("server is running dude on 7500!");
+const PORT = 5500 
+app.listen(PORT, () => {
+  console.log("server is running dude on 5500!");
 });
