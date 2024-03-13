@@ -28,7 +28,7 @@ app.use((err, req, res, next) => {
 
 
 // server start
-const PORT = 7500 
+// const PORT = 7500 
 app.listen(7500, () => {
   console.log("server is running dude on 7500!");
 });

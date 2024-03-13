@@ -16,10 +16,10 @@ function App() {
 
   const postList = allPosts.map(post => {
     return (
-      <div>
+      <div key={post._id}> 
         <h1>{post.title}</h1>
         <p>{post.description}</p>
-        <p>{post.formattedDate}</p>
+        <p>{post.formattedDate}</p> 
       </div>
     )
   })

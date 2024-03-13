@@ -1,4 +1,5 @@
 const mongoose = require("mongoose")
+const moment = require("moment")
 const Schema = mongoose.Schema
 
 const postSchema = new Schema ({
@@ -12,15 +13,12 @@ const postSchema = new Schema ({
     },
     datePosted: {
         type: Date,
-        default: Date.now
+        default: Date.now 
     }
 })
+
 postSchema.virtual('formattedDate').get(function() {
-    const date = new Date(this.datePosted)
-    const day = date.getDate()
-    const month = date.toLocaleString('default', { month: 'long' })
-    const year = date.getFullYear()
-    return `${day} ${month} ${year}`
+    return moment(this.datePosted).format("dddd, MMMM Do YYYY, h:mm:ss a") 
 })
 
 module.exports = mongoose.model("Post", postSchema)
