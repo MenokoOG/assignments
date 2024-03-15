@@ -12,7 +12,15 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  memberSince: {
+    type: Date,
+    default: Date.now
+},
+  issues: {
+    type: Array,
+    default: []
+}
  
 })
 

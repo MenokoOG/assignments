@@ -18,10 +18,9 @@ app.use("/auth", require("./routes/authRouter.js"));
 app.use(
   "/api",
   expressjwt({ secret: process.env.SECRET, algorithms: ["HS256"] })
-); // req.user
-// Other routes here
-app.use('/api/comments', require('./routes/commentRouter.js'))
-app.use('/api/issues', require('./routes/postRouter'))
+);
+app.use("/api/issue", require("./routes/issueRouter"));
+app.use("/api/comment", require("./routes/commentRouter.js"));
 
 app.use((err, req, res, next) => {
   console.log(err);

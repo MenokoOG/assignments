@@ -1,32 +1,29 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const Comment = require('../models/comment')
 
 const issueSchema = new Schema({
     title: {
         type: String,
         required: true
     },
-    description: {
+    content: {
         type: String,
         required: true
     },
-    datePosted: {
-        type: Date,
-        default: Date.now
+    upvote: {
+        type: Number,
+        default: 0
+    },
+    downvote: {
+        type: Number,
+        default: 0
     },
     user: {
         type: Schema.Types.ObjectId,
         ref: "User",
         required: true
-    },
-    likedUsers: [{
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-    }],
-    dislikedUsers:[{
-        type: Schema.Types.ObjectId,
-        ref: "User"
-    }]
+    }
 })
 
 module.exports = mongoose.model("Issue", issueSchema)
