@@ -1,37 +1,41 @@
-import Issues from "./Issues"
+import Issues from "./Issues";
 
+function UserIssueList(props) {
+    const { issues } = props;
 
-function UserIssueList(props){
-
-    const {issues} = props
-
-    function sortIssues(a, b){
-        // Use optional chaining with ?. and default to 0 if undefined
+    function sortIssues(a, b) {
         const upvotesA = a.upvote?.length || 0;
         const upvotesB = b.upvote?.length || 0;
-    
-        if( upvotesA === upvotesB ){
+
+        if (upvotesA === upvotesB) {
             return 0;
         } else {
             return upvotesA > upvotesB ? -1 : 1;
         }
     }
 
-    issues.sort(sortIssues)
+    const filteredIssues = issues.filter(issue => !!issue);
 
+    filteredIssues.sort(sortIssues);
 
-    const issueList = issues.map(issue => {
-        return <Issues
-            {...issue}
-            key = {issue._id}
+    const issueList = filteredIssues.map((issue, index) => (
+        <Issues
+            key={`${issue._id}-${index}`} 
+            title={issue.title}
+            description={issue.description}
+            upvote={issue.upvote}
+            downvote={issue.downvote}
+            upVoteIssue={props.upVoteIssue}
+            downVoteIssue={props.downVoteIssue}
+            _id={issue._id}
         />
-    })
-    
-    return(
+    ));
+
+    return (
         <div>
             {issueList}
         </div>
-    )
+    );
 }
 
-export default UserIssueList
+export default UserIssueList;

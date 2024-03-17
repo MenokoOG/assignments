@@ -8,7 +8,19 @@ import UserIssueList from './UserIssueList.jsx';
 
 
 function Profile() {
-    const { user: { username }, addIssue, issues, upVoteIssue, downVoteIssue } = useContext(UserContext)
+    const { user, addIssue, issues, upVoteIssue, downVoteIssue } = useContext(UserContext);
+
+    // Check if user is null or undefined
+    if (!user) {
+        return (
+            <div>
+                Loading...
+            </div>
+        );
+    }
+
+    // Destructure the username property separately
+    const { username } = user;
     return (
         <div>
             <div className="profile-container">
