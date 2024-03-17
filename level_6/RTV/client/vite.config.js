@@ -9,7 +9,11 @@ export default defineConfig({
       "/api": {
         target: "http://localhost:6500/",
         changeOrigin: true
+      },
+      "/auth": { // Add this to proxy /auth requests
+        target: "http://localhost:6500/",
+        changeOrigin: true
       }
     }
   }
-})
+});

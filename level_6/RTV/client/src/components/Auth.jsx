@@ -1,66 +1,70 @@
-import React, { useState, useContext } from 'react'
-import AuthForm from './AuthForm.jsx'
-import { UserContext } from '../context/UserProvider.jsx'
+import AuthForm from "./AuthForm"
+import { useState, useContext } from 'react'
+import { UserContext } from "../context/UserProvider.jsx"
 
-const initInputs = { username: "", password: "" }
+const initInputs = {username: "", password: ""}
 
- function Auth(){
-  const [inputs, setInputs] = useState(initInputs)
-  const [toggle, setToggle] = useState(false)
+function Auth(){
 
-  const { signup, login, errMsg, resetAuthErr } = useContext(UserContext)
+    const [inputs, setInputs] = useState(initInputs)
+    const [toggle, setToggle] = useState(false)
 
-  function handleChange(e){
-    const {name, value} = e.target
-    setInputs(prevInputs => ({
-      ...prevInputs,
-      [name]: value
-    }))
-  }
+    const { signup, login, errMsg, resetAuthErr } = useContext(UserContext)
 
-  function handleSignup(e){
-    e.preventDefault()
-    signup(inputs)
-  }
+    
 
-  function handleLogin(e){
-    e.preventDefault()
-    login(inputs)
-  }
+    function handleChange(e){
+        const {name, value} = e.target
+        setInputs(prevInputs => ({
+            ...prevInputs,
+            [name]: value
+        }))
+    }
 
-  function toggleForm(){
-    setToggle(prev => !prev)
-    resetAuthErr()
-  }
+    function handleSignup(e){
+        e.preventDefault()
+        signup(inputs)
+    }
 
-  return (
-    <div className="auth-container">
-      <h1>Issues App</h1>
-      { !toggle ?
-        <>
-          <AuthForm 
-            handleChange={handleChange}
-            handleSubmit={handleSignup}
-            inputs={inputs}
-            btnText="Sign up"
-            errMsg={errMsg}
-          />
-          <p onClick={toggleForm}>Already a member?</p>
-        </>
-      :
-        <>
-          <AuthForm 
-            handleChange={handleChange}
-            handleSubmit={handleLogin}
-            inputs={inputs}
-            btnText="Login"
-            errMsg={errMsg}
-          />
-          <p onClick={toggleForm}>Not a member?</p>
-        </>
-      }
-    </div>
-  )
+    function handleLogin(e){
+        e.preventDefault()
+        login(inputs)
+    }
+
+    function toggleForm(){
+        setToggle(prev  => !prev)
+        resetAuthErr()
+    }
+
+    return(
+        <div className="auth-container">\
+        <h1>Rock the Vote</h1>
+            {!toggle && 
+            <>
+                <AuthForm 
+                    inputs= {inputs}
+                    handleChange = {handleChange}
+                    handleSubmit = {handleSignup}
+                    btnText = 'Sign Up'
+                    errMsg = {errMsg}
+                    />
+                <p onClick={toggleForm}>Need to Login?</p>
+            </>}
+
+            {toggle && 
+            <>
+                <AuthForm 
+                    inputs = {inputs}
+                    handleChange = {handleChange}
+                    handleSubmit= {handleLogin}
+                    btnText = 'Log In'
+                    errMsg = {errMsg}
+                />
+                <p onClick={toggleForm}>Need to Signup?</p>
+            </>}
+            
+        </div>
+    )
 }
 
 export default Auth

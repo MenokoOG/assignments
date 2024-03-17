@@ -1,29 +1,33 @@
 import React, { useContext } from 'react';
-import IssueForm from './IssueForm.jsx';
-import IssueList from './IssueList';
-import CommentForm from './CommentForm.jsx';
-import CommentList from './CommentList.jsx';
 import { UserContext } from '../context/UserProvider.jsx';
-import { IssueContext } from '../context/IssueProvider.jsx';
+import IssueForm from './IssueForm.jsx';
+import UserIssueList from './UserIssueList.jsx';
+// import CommentForm from './CommentForm.jsx';
+// import CommentList from './CommentList.jsx';
+
+
 
 function Profile() {
-    const { user: { username } } = useContext(UserContext);
-    const { issueState, upVoteIssue, downVoteIssue, postCommentToIssue } = useContext(IssueContext);
-    const { issues } = issueState;
-
+    const { user: { username }, addIssue, issues, upVoteIssue, downVoteIssue } = useContext(UserContext)
     return (
-        <div className="profile">
-            <h1>Welcome @{username}!</h1>
-            <h3>Add An Issue</h3>
-            <IssueForm />
-            <h3>Your Issues</h3>
-            <IssueList 
-                issues={issues} 
-                onUpVote={upVoteIssue} 
-                onDownVote={downVoteIssue}
-                onPostComment={postCommentToIssue} 
-            />
+        <div>
+            <div className="profile-container">
+                <h1>Hello There {username}!</h1>
+                <h3>Add An Issue</h3>
+                <IssueForm addIssue = {addIssue} />
+            </div>
+            <div className="profile-post-container">
+                <h3>Your Issues</h3>
+                <UserIssueList
+                    issues={issues}
+                    onUpVote={upVoteIssue}
+                    onDownVote={downVoteIssue}
+                // onPostComment={postCommentToIssue} 
+                /></div>
         </div>
+
+
+
     );
 }
 

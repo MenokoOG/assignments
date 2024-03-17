@@ -16,11 +16,8 @@ const userSchema = new Schema({
   memberSince: {
     type: Date,
     default: Date.now
-},
-  issues: {
-    type: Array,
-    default: []
 }
+
  
 })
 

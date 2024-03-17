@@ -1,48 +1,56 @@
-import { useState } from "react";
+import { useState } from "react"
 
 
 const initInputs = {
-    title: "",
-    content: ""
+    title: '',
+    description: ''
 }
-function IssueForm(props) {
-    const [inputs, setInputs] = useState(initInputs)
+
+function IssueForm(props){
     const { addIssue } = props
 
-    function handleChange(e) {
-        const { name, value } = e.target
-        setInputs(prevInputs => ({
-            ...prevInputs,
-            [name]: value
-        }))
-    }
+    const [inputs, setInputs] = useState(initInputs)
 
-    function handleSubmit(e) {
+    function handleChange(e){
+        const {name, value} = e.target
+        setInputs(prevInputs => ({
+          ...prevInputs,
+          [name]: value
+        }))
+      }
+
+      function handleSubmit(e){
         e.preventDefault()
         addIssue(inputs)
         setInputs(initInputs)
-    }
-    const { title, content } = inputs
-    return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="title"
-                    value={title}
-                    placeholder="Title"
-                    onChange={handleChange}
-                />
-                <input
-                    type="text"
-                    name="content"
-                    value={content}
-                    placeholder="Content"
-                    onChange={handleChange}
-                />
-                <button>Post Issue</button>
-            </form>
-        </div>
+      }
+
+
+      const {title, description} = inputs
+    return(
+        
+        <form className="post-form-container" onSubmit={handleSubmit}>
+            <h3>New Issue</h3>
+            <input 
+                type='text'
+                name='title'
+                placeholder="title"
+                value={title}
+                onChange= {handleChange}
+
+            />
+
+            <textarea 
+                type='text'
+                name="description"
+                placeholder="description"
+                value={description}
+                onChange= {handleChange}
+                rows = '20'
+            />
+
+            <button>Issue</button>
+        </form>
     )
 }
 

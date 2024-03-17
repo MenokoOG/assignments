@@ -1,20 +1,110 @@
 const express = require('express')
-const issueController = require('../controllers/issueController')
+const issue = require('../models/issue')
 const issueRouter = express.Router()
 
-// get all issues
-issueRouter.get("/", issueController.issue_index)
 
-// get user issues
-issueRouter.get("/user", issueController.user_issues)
+// Get All Posts
 
-// post issue
-issueRouter.post("/", issueController.issue_post)
+issueRouter.get('/', (req, res, next) => {
+    issue.find((err, issues) => {
+        if(err){
+            res.status(500)
+            return next(err)
+        }
+        return res.status(200).send(issues)
+    })
+})
 
-// put issue (update)
-issueRouter.put("/:issueId", issueController.issue_update)
+// Get Posts By User
 
-// delete issue
-issueRouter.delete("/:issueId", issueController.issue_delete)
+issueRouter.get('/user', (req, res, next) => {
+    issue.find({user: req.auth._id}, (err, issues) => {
+        if(err){
+            res.status(500)
+            return next(err)
+        }
+        return res.status(200).send(issues)
+    })
+})
+
+// Add New Posts
+
+issueRouter.post('/', (req, res, next) => {
+    req.body.user = req.auth._id
+    const newIssue = issue (req.body)
+    newIssue.save((err, savedIssue) => {
+        if(err){
+            res.status(500)
+            return next(err)
+        }
+        return res.status(201).send(savedIssue)
+    })
+})
+
+// Delete Post
+
+issueRouter.delete('/:issueId', (req, res, next) => {
+    issue.findOneAndDelete(
+        {_id: req.params.issueId, user: req.auth._id},
+        (err, deletedIssue) => {
+            if(err){
+                res.status(500)
+                return next(err)
+            }
+            return res.status(200).send(`Deleted ${deletedIssue.title}`)
+        }
+    )
+})
+
+// Update Post
+
+issueRouter.put('/:issueId', (req, res, next) => {
+    issue.findOneAndUpdate(
+        {_id: req.params.issueId, user: req.auth._id},
+        req.body,
+        {new: true},
+        (err, updatedIssue) => {
+            if(err){
+                res.status(500)
+                return next(err)
+            }
+            return res.status(201).send(updatedIssue)
+        }
+    )
+})
+
+// Upvote a Post
+issueRouter.put('/upVote/:issueId', (req, res, next) => {
+    issue.findOneAndUpdate(
+        {_id: req.params.issueId},
+        { $addToSet: { upvote: req.auth._id },
+        $pull : {downvote: req.auth._id}},
+        {new: true},
+        (err, updatedIssue) => {
+            if(err){
+                res.status(500)
+                return next(err)
+            }
+            return res.status(201).send(updatedIssue)
+        }
+    )
+})
+
+//Downvote a Post
+issueRouter.put('/downVote/:issueId', (req, res, next) => {
+    issue.findOneAndUpdate(
+        {_id: req.params.issueId},
+        {$addToSet: { downvote: req.auth._id},
+        $pull: {upvote: req.auth._id}},
+        {new: true},
+        (err, updatedIssue) => {
+            if(err){
+                res.status(500)
+                return next(err)
+            }
+            return res.status(201).send(updatedIssue)
+        }
+    )
+})
 
 module.exports = issueRouter
