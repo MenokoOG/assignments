@@ -17,7 +17,7 @@ function PublicIssueList(props){
 
     allIssues.sort(sortIssues)
 
-    const issuesMap = allPosts.map(issue => {
+    const issuesMap = allIssues.map(issue => {
         return <Issues 
             {...issue}
             key = {issue._id}

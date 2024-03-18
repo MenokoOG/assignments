@@ -91,13 +91,13 @@ function UserProvider(props) {
     }
 
     function getAllIssues() {
-        userAxios.get('/issues')
+        userAxios.get('/api/issues')
             .then(res => setAllIssues(res.data))
             .catch(err => console.log(err))
     }
 
     function getUserIssues() {
-        userAxios.get('/issues/user')
+        userAxios.get('/api/issues/user')
             .then(res => setUserState(prevUserState => ({
                 ...prevUserState,
                 issues: [...prevUserState.issues, ...res.data]
@@ -106,7 +106,7 @@ function UserProvider(props) {
     }
 
     function addIssue(newIssue) {
-        userAxios.post('/issues', newIssue)
+        userAxios.post('/api/issues', newIssue)
             .then(res => {
                 setUserState(prevUserState => ({
                     ...prevUserState,
