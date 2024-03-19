@@ -39,3 +39,6 @@ const people = [
 
 const filteredByCountry = filterByProperty(people, 'country', 'USA');
 console.log(filteredByCountry);
+
+console.log("***********************************************************************")
+

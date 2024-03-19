@@ -1,7 +1,7 @@
 import Issues from "./Issues";
 
 function UserIssueList(props) {
-    const { issues } = props;
+    const { issues,upVoteIssue, downVoteIssue } = props;
 
     function sortIssues(a, b) {
         const upvotesA = a.upvote?.length || 0;
@@ -25,8 +25,8 @@ function UserIssueList(props) {
             description={issue.description}
             upvote={issue.upvote}
             downvote={issue.downvote}
-            upVoteIssue={props.upVoteIssue}
-            downVoteIssue={props.downVoteIssue}
+            // upVoteIssue={upVoteIssue}
+            // downVoteIssue={downVoteIssue}
             _id={issue._id}
         />
     ));

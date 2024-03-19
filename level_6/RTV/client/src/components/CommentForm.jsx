@@ -1,43 +1,38 @@
-import React, { useState, useContext } from 'react'
-import { IssueContext } from '../context/IssueProvider'
+import React, { useState, useContext } from 'react';
+import { UserContext } from '../context/UserProvider';
 
+function CommentForm({ issueId, onCommentAdded }) {
+    const [input, setInput] = useState("");
+    const { addComment } = useContext(UserContext);
 
-const initInputs = {
-    comment: ""
-}
+    function handleChange(e) {
+        setInput(e.target.value);
+    }
 
-function CommentForm() {
-    const [ inputs, setInputs ] = useState(initInputs)
-    const { addComment } = initInputs
+    function handleSubmit(e) {
+        e.preventDefault();
+        addComment(issueId, input).then(newComment => {
+            if (newComment) {
+                onCommentAdded(newComment);
+                setInput("");
+            }
+        }).catch(err => console.error("Failed to add comment:", err));
+    }
 
-    function handleChange(e){
-        const {name, value} = e.target
-        setInputs(prevInputs => ({
-          ...prevInputs,
-          [name]: value
-        }))
-      }
-
-      function handleSubmit(e){
-        e.preventDefault()
-        addComment(inputs)
-        setInputs(initInputs)
-      }
-
-const {comment} = inputs
     return (
         <div>
             <form onSubmit={handleSubmit}>
                 <input
-                type="text"
-                name="content"
-                value={comment}
-                placeholder="comment"
-                onChange={handleChange}
+                    type="text"
+                    name="comment"
+                    value={input}
+                    placeholder="Add a comment"
+                    onChange={handleChange}
                 />
+                <button type="submit">Submit</button>
             </form>
         </div>
-    )
+    );
 }
 
-export default CommentForm
+export default CommentForm;
