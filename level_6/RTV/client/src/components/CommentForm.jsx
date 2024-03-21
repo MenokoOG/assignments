@@ -20,18 +20,18 @@ function CommentForm({ issueId, onCommentAdded }) {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="comment"
-                    value={input}
-                    placeholder="Add a comment"
-                    onChange={handleChange}
-                />
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+        <div class="form-container">
+  <form onSubmit={handleSubmit}>
+    <input
+      type="text"
+      name="comment"
+      value={input}
+      placeholder="Add a comment"
+      onChange={handleChange}
+    />
+    <button type="submit">Submit</button>
+  </form>
+</div>
     );
 }
 
