@@ -8,11 +8,10 @@ const App = () => {
 
   const fetchRandomColor = async () => {
     try {
-      // Fetching a new color using the current timestamp to avoid cache issues
-      const response = await axios.get(`https://www.colr.org/json/color/random?timestamp=${new Date().getTime()}`);
-      if (response.data && response.data.new_color) {
-        // Setting the background color to the fetched color
-        setBackgroundColor(`#${response.data.new_color}`);
+      const response = await axios.get(`https://random-color.onrender.com/colors/random?timestamp=${new Date().getTime()}`);
+      console.log('Response:', response); // Log the response for debugging
+      if (response.data && response.data.hex) {
+        setBackgroundColor(response.data.hex);
       } else {
         console.error('Color data not found');
       }
