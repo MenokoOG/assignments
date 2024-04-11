@@ -12,7 +12,7 @@ app.use(morgan("dev"));
 // connection to database function 
 const connectToDb = async () => {
     try {
-     await mongoose.connect("mongodb+srv://zakward85:oPOlFsKz0WpuKN72@cluster0.8z05imv.mongodb.net/")   
+     await mongoose.connect(MONGODB_SECRET)   
      console.log("Connected to the MongoDB")
     } catch (error) {
         console.log(error)
