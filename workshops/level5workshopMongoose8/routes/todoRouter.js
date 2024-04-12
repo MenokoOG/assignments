@@ -70,7 +70,7 @@ todoRouter.get("/", async (req, res, next) => {
 * * delete request mongoose 6 (with callbacks)
 ?todoRouter.delete("/:id", (req, res, next) => {
 ?   Todo.findByIdAndDelete(
-?       {_id: req.parms.id}
+?       {_id: req.params.id}
 ?       (err, deletedTodo) => {
 ?           if(err){
 ?               res.status(500)
