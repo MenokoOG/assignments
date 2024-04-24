@@ -29,7 +29,7 @@ function addItemToList(item) {
     deleteButton.addEventListener("click", function(event) {
         event.preventDefault()
         removeItem()
-    })
+})}
 //=========================START HERE======================================
     editButton.addEventListener("click", function (event) {
         event.preventDefault();
