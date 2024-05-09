@@ -21,6 +21,7 @@ export default function UserProvider(props) {
 
     const [userState, setUserState] = useState(initState)
     const [allIssues, setAllIssues] = useState([])
+    const [allComments, setAllComments] = useState([])
 
     function signup(credentials) {
         axios.post("/api/auth/signup", credentials)
@@ -105,6 +106,23 @@ export default function UserProvider(props) {
             .catch(err => console.log(err))
     }
 
+    function getAllComments(){
+        userAxios.get("/api/main/comments")
+            .then(res => setAllComments(res.data))
+            .catch(err => console.log(err))
+    }
+
+    function addComment(id, comment) {
+        userAxios.post(`/api/main/comments/${id}`, comment)
+        .then(res => setAllComments(prevAllComments => {
+            return [
+                ...prevAllComments,
+                res.data
+            ]
+        }))
+        .catch(err => console.log(err))
+    }
+
 
     return (
         <UserContext.Provider
@@ -117,7 +135,10 @@ export default function UserProvider(props) {
                 resetAuthErr,
                 getUserIssues,
                 getAllIssues,
-                allIssues
+                allIssues, 
+                getAllComments,
+                allComments,
+                addComment
             }}>
             {props.children}
         </UserContext.Provider>

@@ -2,7 +2,9 @@ import { useState } from 'react';
 import CommentForm from './CommentForm';
 import CommentList from './CommentList';
 
-function CommentContainer() {
+function CommentContainer(props) {
+
+    const {issueId} = props
 
     const [isHidden, setIsHidden] = useState(true)
 
@@ -12,9 +14,9 @@ function CommentContainer() {
 
     return ( 
         <div>
-            <CommentForm />
+            <CommentForm issueId = {issueId}/>
             <button onClick={toggleView}>{isHidden ? 'Show Comments' : 'Hide Comments'}</button>
-            {!isHidden && <CommentList />}
+            {!isHidden && <CommentList issueId = {issueId} />}
         </div>
      );
 }

@@ -1,7 +1,11 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { UserContext } from '../context/UserContext';
 
 
-function CommentForm() {
+function CommentForm(props) {
+
+    const {addComment} = useContext(UserContext)
+    const {issueId} = props
 
     const [formData, setFormData] = useState({
         text: ''
@@ -20,6 +24,7 @@ function CommentForm() {
     function handleSubmit(e){
         e.preventDefault()
         console.log(formData)
+        addComment(issueId, formData)
         setFormData({text: ''})
     }
 

@@ -22,7 +22,7 @@ export default function Issue(props) {
         <p>Downvotes: 0</p>
         <button>Downvote</button>
       </div>
-      <CommentContainer />
+      <CommentContainer issueId = {_id}/>
     </div>
   )
 }

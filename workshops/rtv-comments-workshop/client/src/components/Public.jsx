@@ -4,10 +4,11 @@ import IssueList from './IssueList.jsx'
 
 export default function Public(){
 
-  const {getAllIssues, allIssues} = useContext(UserContext)
+  const {getAllIssues, allIssues, getAllComments} = useContext(UserContext)
 
   useEffect(() => {
     getAllIssues()
+    getAllComments()
   }, [])
 
 
