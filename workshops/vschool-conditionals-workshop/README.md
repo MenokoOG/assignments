@@ -1,1 +1,0 @@
-# vschool-conditionals-workshop
