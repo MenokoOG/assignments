@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input Types Workshop</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Registration Form</h1>
+  <form id="registration-form" name = "form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required /><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required /><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required /><br>
+
+    <label>Telephone:</label>
+    <input type = "tel" id ="telephone" name = "telephone"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+
+    <label for="birthday">Date of Birth:</label>
+    <input type="date" id="birthday" name="birthday"><br>  <label for="preferred_time">Preferred Contact Time:</label>
+    <input type="time" id="preferred_time" name="preferred_time"><br>  
+    
+    <label for="age">Age</label>
+    <input type="number" min = 1 max = 100 step = 1>
+
+    <h2>Preferences</h2>
+
+    <label for="contact_email">Receive updates via email:</label>
+    <input type="checkbox" id="contact_email" name="contact_email" /><br>
+
+    <label for = "food">Select Food Preference</label>
+    <select id = "food" name = "food">
+        <option value = "breakfast">Breakfast</option>
+        <option value = "lunch">Lunch</option>
+        <option value = "dinner">Dinner</option>
+    </select>
+    <br>
+
+
+    <label>Preferred communication language (choose one):</label>
+    <input type="radio" id="lang_english" name="language" value="english" />
+    <label for="lang_english">English</label><br>
+
+    <input type="radio" id="lang_spanish" name="language" value="spanish" />
+    <label for="lang_spanish">Spanish</label><br>
+
+    <label for="notes">Please provide any additional notes</label>
+    <textarea name="notes" id="notes" cols="30" rows="10"></textarea><br>
+
+    <label for="profile_pic">Upload Profile Picture (optional):</label>
+    <input type="file" id="profile_pic" name="profile_pic"><br>
+    <label for="color"></label>
+    <input type="color" id="color" name="color"><br>
+
+    <label for = "range">Range:</label>
+    <input type = "range" min = 0 max = 10 step = 1 name = "range" />
+
+    <button type="submit" id = "submit">Submit Registration</button>
+    <button type="reset">Reset Form</button>
+  </form>
+
+  <script src="script.js"></script>  </body>
+</html>
