@@ -39,21 +39,11 @@ var peopleArray = [
 
 
 
-function sortedOfAge(arr) {
-     // Filter people older than 18
-     const filteredPeople = arr.filter(person => person.age > 18);
-
-     // Sort by last name
-     filteredPeople.sort((a, b) => a.lastName.localeCompare(b.lastName));
- 
-     // Map each person to a string containing HTML <li> element
-     const resultList = filteredPeople.map(person => `<li>${person.firstName} ${person.lastName} - Age: ${person.age}</li>`);
- 
-     // Join the list items into a single string
-     const resultString = resultList.join('');
- 
-     return resultString;
- }
+function sortedOfAge(peopleArray) {
+    return peopleArray
+        .sort((a, b) => a.age - b.age)
+        .map(person => `<li>${person.personName} is ${person.age}</li>`);
+}
 
 module.exports = {
     sortedOfAge
