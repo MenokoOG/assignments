@@ -120,5 +120,5 @@ const newMarineGuy = new MarinePerson("joe", "slicky", 25, "Marine Corp", "Gunny
 console.log(newMarineGuy.marinePrint())
 const newNavySquid = new NavyPerson ("posiden", "trident", 3000, "Navy", "Admiral", "USS Enterprise")
 console.log(newNavySquid.navyPrint())
-newAirForceWingNut = new AirForcePerson("Red", "Barron", 150, "Air Force", "ACE!!", "Fairchild AFB")
+const newAirForceWingNut = new AirForcePerson("Red", "Barron", 150, "Air Force", "ACE!!", "Fairchild AFB")
 console.log(newAirForceWingNut.airForcePrint())
