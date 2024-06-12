@@ -1,0 +1,148 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8; /* Light grayish-blue background */
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+}
+
+/* Navigation Styles */
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100vw;
+    border-bottom: solid #007acc 2px; /* Blue border */
+    margin-bottom: 20px;
+    background-color: #e3f2fd; /* Light blue background */
+    padding: 10px 0;
+}
+
+.nav h2 {
+    margin: 0;
+    color: #007acc; /* Blue text color */
+}
+
+/* Main Section Styles */
+.main {
+    background-color: #ffffff; /* White background for main content */
+    width: 80vw;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Form Styles */
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    border: solid #007acc 2px; /* Blue border */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.form label {
+    margin-bottom: 10px;
+    color: #333333; /* Darker gray text for readability */
+}
+
+
+.form label.inline {
+    display: flex;
+    align-self: flex-start;
+}
+
+.form input,
+.form fieldset,
+.form select {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc; /* Light gray border */
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's width and height */
+}
+
+.form fieldset {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* Align items to the start */
+    gap: 20px; /* Space between radio button groups */
+    width: 100%;
+    border: 1px solid #cccccc; /* Light gray border */
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.form fieldset legend {
+    margin-bottom: 0;
+    padding: 0 10px;
+}
+
+.form fieldset label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.form fieldset input {
+    margin-left: 5px;
+}
+
+.form button {
+    padding: 10px 20px;
+    background-color: #007acc; /* Blue button background */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+    background-color: #005fa3; /* Darker blue on hover */
+}
+
+/* Data List Styles */
+.data-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.data-list {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff; /* White background for data list */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.data-list div {
+    border-bottom: 1px solid #cccccc; /* Light gray border between entries */
+    padding: 10px 0;
+}
+
+.data-list div:last-child {
+    border-bottom: none; /* Remove border for last item */
+}
+
+.data-list p {
+    margin: 5px 0;
+    color: #333333; /* Darker gray text for readability */
+}
