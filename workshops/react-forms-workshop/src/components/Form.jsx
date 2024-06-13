@@ -1,16 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function Form() {
+function Form({addData}) {
+    const [formData, setFormData] = useState({
+        email: "",
+        fName: "",
+        lName: "",
+        newsletter: false,
+        contactMethod: "",
+        country: ""
+    });
+
+    function handleChange(e) {
+        const { name, value, type, checked } = e.target;
+        setFormData(prevData => ({
+            ...prevData,
+            [name]: type === 'checkbox' ? checked : value
+        }));
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        addData(formData)
+        setFormData({
+            email: "",
+            fName: "",
+            lName: "",
+            newsletter: false,
+            contactMethod: "",
+            country: ""  
+        })
+        console.log(formData);
+    }
 
     return (
-        <form className='form'>
+        <form className='form' onSubmit={handleSubmit}>
             <label>
                 Email:
                 <input
                     placeholder='Email'
                     type='email'
                     name='email'
-                    
+                    value={formData.email}
+                    onChange={handleChange}
                 />
             </label>
 
@@ -20,6 +51,8 @@ function Form() {
                     placeholder='First Name'
                     type='text'
                     name='fName'
+                    value={formData.fName}
+                    onChange={handleChange}
                 />
             </label>
 
@@ -29,6 +62,8 @@ function Form() {
                     placeholder='Last Name'
                     type='text'
                     name='lName'
+                    value={formData.lName}
+                    onChange={handleChange}
                 />
             </label>
 
@@ -37,6 +72,8 @@ function Form() {
                 <input
                     type='checkbox'
                     name='newsletter'
+                    checked={formData.newsletter}
+                    onChange={handleChange}
                 />
             </label>
 
@@ -47,6 +84,8 @@ function Form() {
                         type='radio'
                         name='contactMethod'
                         value='email'
+                        checked={formData.contactMethod === 'email'}
+                        onChange={handleChange}
                     />
                     Email
                 </label>
@@ -55,6 +94,8 @@ function Form() {
                         type='radio'
                         name='contactMethod'
                         value='phone'
+                        checked={formData.contactMethod === 'phone'}
+                        onChange={handleChange}
                     />
                     Phone
                 </label>
@@ -63,6 +104,8 @@ function Form() {
                         type='radio'
                         name='contactMethod'
                         value='mail'
+                        checked={formData.contactMethod === 'mail'}
+                        onChange={handleChange}
                     />
                     Mail
                 </label>
@@ -72,6 +115,8 @@ function Form() {
                 Country:
                 <select
                     name='country'
+                    value={formData.country}
+                    onChange={handleChange}
                 >
                     <option value=''>Select a country</option>
                     <option value='usa'>United States</option>

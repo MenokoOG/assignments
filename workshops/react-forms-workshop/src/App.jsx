@@ -7,7 +7,7 @@ function App() {
 
   const [data, setData] = useState([])
 
-
+  const addData = (input) => setData(prevData => [...prevData, input])
 
   return (
     <div className='app'>
@@ -16,9 +16,9 @@ function App() {
         <h2>React Forms</h2>
         <h2>V School</h2>
       </nav>
-      
+
       <div className='main'>
-        <Form />
+        <Form addData={addData} />
 
         <DataList data={data} />
       </div>
