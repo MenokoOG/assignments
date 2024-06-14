@@ -5,9 +5,12 @@ import MemeGeneratorForm from './MemeGeneratorForm';
 import { v4 as uuidv4 } from 'uuid';
 
 const MemeGenerator = () => {
-  const { memes, loading, fetchMemes } = useFetchMemes();
+  const { memes, loading } = useFetchMemes();
   const [createdMemes, setCreatedMemes] = useState([]);
   const [currentMeme, setCurrentMeme] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editMemeId, setEditMemeId] = useState(null);
+  const [editingMeme, setEditingMeme] = useState(null);
 
   const addMeme = (memeText) => {
     const newMeme = { id: uuidv4(), ...memeText, imageUrl: currentMeme.url };
@@ -18,9 +21,22 @@ const MemeGenerator = () => {
     setCreatedMemes(createdMemes.filter(meme => meme.id !== id));
   };
 
-  // To be implemented: editing an existing meme
-  const editMeme = (id, updatedText) => {
-    // Logic for editing a meme
+  const startEditing = (id) => {
+    const memeToEdit = createdMemes.find(meme => meme.id === id);
+    setIsEditing(true);
+    setEditMemeId(id);
+    setEditingMeme(memeToEdit);
+  };
+
+  const editMeme = (updatedText) => {
+    setCreatedMemes(
+      createdMemes.map(meme =>
+        meme.id === editMemeId ? { ...meme, ...updatedText } : meme
+      )
+    );
+    setIsEditing(false);
+    setEditMemeId(null);
+    setEditingMeme(null);
   };
 
   if (loading) return <p>Loading...</p>;
@@ -31,9 +47,11 @@ const MemeGenerator = () => {
 
   return (
     <div>
-      <h1>Menoko OG's React Meme  Generator</h1>
-      <button onClick={() => setCurrentMeme(memes[Math.floor(Math.random() * memes.length)])} className="refresh">Refresh Meme Image</button>
-      <MemeGeneratorForm onSubmit={addMeme} memeImage={currentMeme} />
+      <h1>Menoko OG's React Meme Generator</h1>
+      <button onClick={() => setCurrentMeme(memes[Math.floor(Math.random() * memes.length)])} className="refresh">
+        Refresh Meme Image
+      </button>
+      <MemeGeneratorForm onSubmit={isEditing ? editMeme : addMeme} memeImage={currentMeme} editingMeme={editingMeme} />
       {/* Display created memes */}
       <div>
         {createdMemes.map(meme => (
@@ -42,7 +60,7 @@ const MemeGenerator = () => {
             <p>{meme.topText}</p>
             <p>{meme.bottomText}</p>
             <button onClick={() => deleteMeme(meme.id)} className="delete">Delete</button>
-            {/* Button for editing to be added */}
+            <button onClick={() => startEditing(meme.id)} className="edit">Edit</button>
           </div>
         ))}
       </div>

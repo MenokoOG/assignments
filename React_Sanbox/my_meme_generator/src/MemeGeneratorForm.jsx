@@ -1,13 +1,22 @@
 // src/MemeGeneratorForm.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const MemeGeneratorForm = ({ onSubmit, memeImage }) => {
+const MemeGeneratorForm = ({ onSubmit, memeImage, editingMeme }) => {
   const [topText, setTopText] = useState('');
   const [bottomText, setBottomText] = useState('');
+
+  useEffect(() => {
+    if (editingMeme) {
+      setTopText(editingMeme.topText);
+      setBottomText(editingMeme.bottomText);
+    }
+  }, [editingMeme]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit({ topText, bottomText });
+    setTopText('');
+    setBottomText('');
   };
 
   return (
