@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -5,7 +6,7 @@ const EditBounty = ({ bounty, onUpdate }) => {
   const [formData, setFormData] = useState({
     firstName: bounty.firstName,
     lastName: bounty.lastName,
-    living: bounty.living.toString(),
+    living: bounty.living,
     bountyAmount: bounty.bountyAmount,
     type: bounty.type
   });

@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import axios from 'axios';
 import EditBounty from './EditBounty';
 
+// eslint-disable-next-line react/prop-types
 const ReadBounties = ({ bounties, onBountiesChange }) => {
   const [editBountyId, setEditBountyId] = React.useState(null);
 
@@ -18,7 +20,7 @@ const ReadBounties = ({ bounties, onBountiesChange }) => {
     setEditBountyId(id);
   };
 
-  const handleUpdate = (updatedBounty) => {
+  const handleUpdate = () => {
     onBountiesChange(); // Refresh bounties list after updating a bounty
     setEditBountyId(null); // Reset edit state
   };
@@ -29,7 +31,7 @@ const ReadBounties = ({ bounties, onBountiesChange }) => {
       <ul>
         {bounties.map(bounty => (
           <li key={bounty._id}>
-            <strong>{bounty.firstName} {bounty.lastName}</strong> - ${bounty.bountyAmount} ({bounty.type})
+            <strong>{bounty.firstName} {bounty.lastName} </strong> - ${bounty.bountyAmount} ({bounty.type})
             <button className="btn btn-danger" onClick={() => handleDelete(bounty._id)}>Delete</button>
             <button className="btn btn-secondary" onClick={() => handleEdit(bounty._id)}>Edit</button>
             {editBountyId === bounty._id && <EditBounty bounty={bounty} onUpdate={handleUpdate} />}
