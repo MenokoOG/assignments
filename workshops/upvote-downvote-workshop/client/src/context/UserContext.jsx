@@ -105,6 +105,32 @@ export default function UserProvider(props) {
             .catch(err => console.log(err))
     }
 
+    function upvoteIssue(issueId) {
+        userAxios.put(`/api/main/issue/upvote/${issueId}`)
+            .then(res => {
+                console.log(res.data);
+                setAllIssues(prevAllIssues => prevAllIssues.map(issue => issue._id === issueId ? res.data : issue));
+                setUserState(prevState => ({
+                    ...prevState,
+                    issues: prevState.issues.map(issue => issue._id === issueId ? res.data : issue)
+                }));
+            })
+            .catch(err => console.log(err));
+    }
+    
+    function downvoteIssue(issueId) {
+        userAxios.put(`/api/main/issue/downvote/${issueId}`)
+            .then(res => {
+                console.log(res.data);
+                setAllIssues(prevAllIssues => prevAllIssues.map(issue => issue._id === issueId ? res.data : issue));
+                setUserState(prevState => ({
+                    ...prevState,
+                    issues: prevState.issues.map(issue => issue._id === issueId ? res.data : issue)
+                }));
+            })
+            .catch(err => console.log(err));
+    }
+    
 
     return (
         <UserContext.Provider
@@ -117,6 +143,8 @@ export default function UserProvider(props) {
                 resetAuthErr,
                 getUserIssues,
                 getAllIssues,
+                upvoteIssue,
+                downvoteIssue,
                 allIssues
             }}>
             {props.children}

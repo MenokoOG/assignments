@@ -68,4 +68,45 @@ issueRouter.put("/:issueId", (req, res, next) => {
     );
 });
 
+//upvote
+issueRouter.put('/upvote/:id', (req, res, next) => {
+    Issue.findOneAndUpdate(
+        {_id: req.params.id},
+        {
+            $addToSet: {likedUsers: req.auth._id},
+            $pull: {dislikedUsers: req.auth._id}
+        },
+        {new: true},
+        (err, updatedIssue) => { 
+            if (err) {
+                res.status(500);
+                return next(err);
+            }
+            return res.status(201).send(updatedIssue);
+        }
+    );
+});
+
+//downvote
+issueRouter.put('/downvote/:id', (req, res, next) => {
+    Issue.findByIdAndUpdate(
+        {_id: req.params.id},
+        {
+            $addToSet: {dislikedUsers: req.auth._id},
+            $pull: {likedUsers: req.auth._id}
+        },
+        {new: true},
+        (err, updatedIssue) => { 
+            if (err) {
+                res.status(500);
+                return next(err);
+            }
+            return res.status(201).send(updatedIssue);
+        }
+    );
+});
+
+
+
+
 module.exports = issueRouter;
