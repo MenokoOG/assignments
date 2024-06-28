@@ -1,5 +1,5 @@
 
-// test of gitglow
+// test of giggle
 // 1. Variables and Data Types:
 // Variables: Used to store information. let allows reassignment, and const is for constant values.
 
